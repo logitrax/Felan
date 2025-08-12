@@ -1,0 +1,425 @@
+.block-archive-sidebar {
+  padding: 24px;
+  border: 1px solid $border_color;
+  border-radius: 16px;
+  + .block-archive-sidebar {
+    margin-top: 16px;
+  }
+  h4 {
+    font-size: 24px;
+  }
+}
+
+div.jobs-apply-sidebar {
+  background: rgba(0, 116, 86, 0.05);
+  border: 1px solid rgba(0, 116, 86, 0.07);
+  padding: 24px;
+  border-radius: 16px;
+  text-align: center;
+  .days {
+    font-weight: 500;
+    margin-bottom: 18px;
+    span {
+      color: red;
+    }
+  }
+  .felan-button {
+    width: 100%;
+  }
+  .account a:hover {
+    color: #fff !important;
+  }
+}
+
+.jobs-insights-sidebar {
+  border: 1px solid $border_color;
+  padding: 28px 28px 8px;
+  border-radius: 16px;
+  .title-jobs {
+    margin-bottom: 24px;
+  }
+  .info-apply {
+    margin-top: 20px;
+  }
+  .days {
+    margin-top: 18px;
+    text-align: center;
+    margin-bottom: 0;
+    font-size: 14px;
+    span {
+      color: $accent_color;
+    }
+  }
+}
+
+.jobs-company-sidebar {
+  .company-sidebar-top {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .company-header {
+    @include d-flex();
+    @include align-items-center();
+    margin-bottom: 25px;
+    gap: 12px;
+    img {
+      width: 54px;
+      height: 54px;
+      object-fit: cover;
+      border-radius: 50%;
+    }
+    .felan-check-company:after {
+      top: -3px;
+    }
+    .felan-rating-warpper .rating-count {
+      padding-left: 0;
+    }
+  }
+  .company-phone i {
+    margin-left: 7px;
+    cursor: pointer;
+  }
+  .name {
+    h2 {
+      font-size: 18px;
+      margin-bottom: 3px;
+      display: inline-block;
+      a {
+        color: $primary_color;
+        &:hover {
+          color: $accent_color;
+        }
+      }
+      i {
+        font-size: 8px;
+        width: 15px;
+        height: 15px;
+        border-radius: 50%;
+        background-color: $accent_color;
+        line-height: 15px;
+        text-align: center;
+        color: #fff;
+        margin-left: 5px;
+      }
+    }
+    p {
+      margin-bottom: 0;
+      a {
+        font-weight: 500;
+        color: $accent_color;
+      }
+    }
+  }
+  p {
+    line-height: 1.5em;
+  }
+  .tab-company {
+    list-style: none;
+    padding-left: 0;
+    @include d-flex();
+    margin-bottom: 20px;
+    li {
+      + li {
+        margin-left: 24px;
+      }
+      span {
+        width: 28px;
+        height: 28px;
+        border-radius: 8px;
+        background-color: rgba(0, 116, 86, 0.05);
+        color: $accent_color;
+        margin-left: 2px;
+        font-size: 16px;
+        display: inline-block;
+        text-align: center;
+      }
+      &:after {
+        content: "";
+        bottom: 0;
+        height: 2px;
+        width: 100%;
+        display: block;
+        background-color: transparent;
+        width: 0;
+        @include transition(all 0.3s);
+      }
+      &:hover,
+      &.active {
+        &:after {
+          background-color: $primary_color;
+          width: 100%;
+        }
+        a {
+          color: $primary_color;
+        }
+      }
+    }
+    a {
+      font-size: 18px;
+      font-weight: 500;
+      color: $secondary_color;
+    }
+  }
+  .title-info {
+    font-weight: 500;
+    color: $primary_color;
+    margin-bottom: 3px;
+  }
+  .list-cate {
+    padding-left: 0;
+    margin-bottom: 0;
+  }
+  .details-info span,
+  .list-cate .cate {
+    &:not(:first-child):before {
+      content: ",";
+    }
+  }
+
+  .content {
+    margin-bottom: 20px;
+    p {
+      margin-bottom: 0;
+      display: none;
+      &:first-child {
+        display: inline-block;
+      }
+    }
+    &.is-active {
+      p {
+        display: inline-block;
+        margin-bottom: 12px;
+      }
+    }
+    a {
+      color: #007456;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+  .details-info {
+    margin-bottom: 0;
+    &.email a {
+      color: $text_color;
+      &:hover {
+        color: $accent_color;
+      }
+    }
+  }
+  .logo-company {
+    text-align: center;
+    img {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+  }
+  .title-wapper {
+    h2 {
+      font-size: 18px;
+      margin-bottom: 0;
+    }
+  }
+  .felan-rating-warpper {
+    .jobs-company-sidebar .rating-count {
+      padding-left: 0;
+    }
+  }
+  .info {
+    margin-bottom: 10px;
+    svg {
+      width: 20px;
+    }
+    i.fa-eye {
+      margin-left: 5px;
+      cursor: pointer;
+      position: relative;
+      top: -3px;
+    }
+  }
+  .felan-button {
+    i {
+      font-size: 14px;
+      font-weight: 500;
+      padding-left: 10px;
+    }
+  }
+  .button-visit {
+    margin-top: 20px;
+  }
+  .button-send {
+    margin-top: 10px;
+    &.button-outline {
+      border-color: $accent_color;
+      color: $accent_color;
+    }
+  }
+  .list-social {
+    margin-bottom: 0;
+    list-style: none;
+    padding-left: 0;
+    @include d-flex();
+    @include justify-content-center();
+    margin-top: 20px;
+    li {
+      + li {
+        margin-left: 20px;
+      }
+    }
+    a {
+      font-weight: 500;
+      color: $primary_color;
+      font-size: 20px;
+      &:hover {
+        color: $accent_color;
+      }
+    }
+  }
+  .company-sidebar-center {
+    margin-top: 25px;
+    .info {
+      @include d-flex();
+      @include align-items-center();
+      gap: 8px;
+      i {
+        color: $accent_color;
+        margin-right: 10px;
+        font-weight: 400;
+        width: 15px;
+      }
+    }
+    .action-inner {
+      @include d-flex();
+      .btn-webs,
+      .btn-add-to-message + .btn-add-to-message {
+        margin-left: 15px;
+        width: 100%;
+      }
+      .add-follow-company,
+      .btn-add-to-message {
+        @include d-flex();
+        @include align-items-center();
+      }
+      .felan-button {
+        text-align: center;
+        padding: 10px 12px;
+        width: 100%;
+        justify-content: center;
+        i {
+          padding-left: 0;
+          margin-left: 0;
+          margin-right: 8px;
+        }
+      }
+      .account {
+        width: 100%;
+      }
+      .add-follow-company {
+        @include justify-content-center();
+        text-align: center;
+      }
+    }
+  }
+  .company-sidebar-bottom {
+    margin-top: 27px;
+    h3 {
+      font-size: 18px;
+      margin-bottom: 12px;
+    }
+    .conpany-insights {
+      margin-top: 22px;
+    }
+  }
+  .list-jobs {
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 0;
+    li:not(:first-child) {
+      margin-top: 16px;
+      padding-top: 16px;
+      border-top: 1px solid $border_color;
+    }
+    .title {
+      line-height: 0.8;
+      a {
+        color: $primary_color;
+        font-size: 18px;
+      }
+    }
+    .info-company {
+      > span {
+        + span:before {
+          content: "/";
+        }
+      }
+    }
+    .categories span {
+      color: $accent_color;
+      font-weight: 500;
+    }
+    .categories,
+    .cate-skills {
+      span + span:before {
+        content: ",";
+      }
+    }
+  }
+  .label-categories {
+    color: $accent_color;
+    background-color: rgba(0, 116, 86, 0.05);
+    i {
+      padding-right: 5px;
+      font-weight: normal;
+    }
+  }
+  .felan-send-mess {
+    margin-top: 15px;
+    width: 100%;
+    background-color: transparent;
+    text-align: center;
+    color: $accent_color;
+    &:hover {
+      background-color: $accent_color;
+      color: #fff;
+    }
+    &:after {
+      content: "\f1d8";
+      font-family: "Font Awesome 5 Pro";
+      margin-left: 5px;
+    }
+  }
+}
+
+.company-sidebar .company-sidebar-center {
+  .felan-send-mess {
+    border-color: $accent_color;
+    background-color: $accent_color;
+    color: #fff;
+  }
+  .btn-webs {
+    border-color: $border-color;
+    color: $primary_color;
+    &:hover {
+      background-color: $primary_color;
+      border-color: $primary_color;
+    }
+  }
+}
+
+#tab-sidebar-jobs {
+  .felan-button {
+    border-color: $accent_color;
+    color: $accent_color;
+    margin-top: 32px;
+    &:hover {
+      color: #fff;
+    }
+  }
+  .cate-warpper a {
+    color: $accent_color;
+    font-weight: 500;
+  }
+}

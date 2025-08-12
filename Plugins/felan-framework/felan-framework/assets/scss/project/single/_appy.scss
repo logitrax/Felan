@@ -1,0 +1,53 @@
+#form-apply-project{
+    p.notice {
+        padding: 10px 10px 10px 40px;
+        margin-top: 20px;
+        i{
+            top: 12px;
+            left: 10px;
+        }
+    }
+    ul{
+        list-style: none;
+        padding-left: 0;
+        margin-top: 12px;
+        li{
+            @include d-flex();
+            @include justify-content-between();
+            + li{
+                margin-top: 5px;
+            }
+        }
+    }
+    .inner-popup{
+        max-width: 420px;
+        padding: 24px;
+    }
+    .price{
+        color: $primary_color;
+        font-weight: 500;
+    }
+    .price-inner{
+        @include d-flex();
+    }
+    #title_total_price{
+        cursor: not-allowed;
+    }
+    .button-warpper{
+        @include justify-content-end();
+    }
+    li.total{
+        .text{
+            font-weight: 500;
+            color: $primary_color;
+        }
+    }
+    input[type="number"]::-webkit-inner-spin-button,
+    input[type="number"]::-webkit-outer-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+    input[type="number"] {
+        -moz-appearance: textfield;
+    }
+}

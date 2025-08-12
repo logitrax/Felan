@@ -1,0 +1,29 @@
+.felan-freelancers-item.layout-list {
+  padding-bottom: 20px;
+  .freelancers-header-right {
+    @include d-flex();
+    @include align-items-center();
+  }
+}
+
+@media (max-width: 767px) {
+  .felan-freelancers-item.layout-list {
+    .freelancers-header-right {
+      display: block;
+    }
+    .freelancers-title {
+      margin-top: 14px;
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .felan-freelancers-item.layout-list {
+    .freelancer-bottom {
+      display: block;
+    }
+    .freelancer-services {
+      margin-top: 15px;
+    }
+  }
+}

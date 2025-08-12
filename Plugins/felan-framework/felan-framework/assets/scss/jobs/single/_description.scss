@@ -1,0 +1,61 @@
+.felan-description-details {
+  h4 {
+    font-size: 24px;
+    margin-bottom: 16px;
+  }
+  h5 {
+    font-size: 20px;
+    margin-bottom: 16px;
+  }
+  h6 {
+    font-size: 18px;
+    margin-bottom: 16px;
+  }
+  p {
+    margin-bottom: 24px;
+    line-height: 1.5;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+  li + li {
+    margin-top: 5px;
+  }
+  ul {
+    list-style: disc;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+  .toggle-description {
+    margin-top: 15px;
+    i {
+      margin-left: 8px;
+    }
+    a {
+      font-size: 16px;
+      color: $accent_color;
+      font-weight: 500;
+    }
+  }
+}
+
+@media (min-width: 576px) {
+  .felan-description-details .toggle-description {
+    display: none;
+  }
+}
+
+@media (max-width: 576px) {
+  .felan-description-details {
+    &.on {
+      .felan-description {
+        overflow: hidden;
+        max-height: 330px;
+      }
+      .hide-all-description {
+        display: none;
+      }
+    }
+  }
+}

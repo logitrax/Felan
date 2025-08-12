@@ -1,0 +1,200 @@
+@import "payment";
+
+.felan-package-wrap {
+    &.package-service {
+    }
+    .row {
+        margin-left: -8px;
+        margin-right: -8px;
+        .col-md-4 {
+            margin-bottom: 30px;
+        }
+    }
+    .entry-title {
+        margin: 32px 0;
+    }
+    .choose-package {
+        text-align: center;
+        margin-bottom: 30px;
+        h4 {
+            font-size: 24px;
+            margin-bottom: 11px;
+        }
+        p {
+            margin-bottom: 0;
+        }
+    }
+    .felan-package-thumbnail {
+        margin-bottom: 15px;
+    }
+    .felan-package-item {
+        border-radius: 8px;
+        border: solid 1px $border_color;
+        background-color: #ffffff;
+        padding: 32px;
+        @include transition(box-shadow 0.3s);
+        @include box-shadow(0 0 0 0 rgba(0, 0, 0, 0.01));
+        height: 100%;
+        .felan-package-title {
+            .entry-title {
+                font-size: 16px;
+                font-weight: 500;
+                text-transform: uppercase;
+                margin: 0;
+                color: $accent_color;
+            }
+            span {
+                font-size: 18px;
+                font-weight: 500;
+                padding: 8px 22px;
+                border-radius: 6px;
+                background-color: #ffc402;
+                color: #fff;
+                position: absolute;
+                top: -21px;
+                right: 35px;
+            }
+        }
+        .felan-package-price {
+            font-size: 46px;
+            font-weight: 500;
+            color: $primary_color;
+            padding-bottom: 20px;
+            border-bottom: 1px solid $border_color;
+            sup {
+                font-size: 46px;
+                margin-right: 3px;
+                bottom: 0;
+                top: 0;
+            }
+        }
+        .felan-package-choose {
+            margin-top: 30px;
+        }
+        ul.list-group {
+            font-size: 16px;
+            line-height: 1.5;
+            padding-left: 0;
+            margin-bottom: 0;
+            list-style-type: none;
+            margin-top: 32px;
+            overflow: auto;
+            li {
+                font-weight: 500;
+                i {
+                    color: #3ab446;
+                    margin-right: 10px;
+                }
+                + li {
+                    margin-top: 20px;
+                }
+            }
+        }
+        &:hover {
+            cursor: pointer;
+            @include box-shadow(0 10px 14px 5px rgba(0, 0, 0, 0.05));
+        }
+        &.active {
+            border-color: #ffe180;
+            .felan-button {
+                color: #fff !important;
+                background-color: $accent_color !important;
+                border-color: $accent_color !important;
+                &:hover {
+                    background-image: linear-gradient(rgba(0, 0, 0, 0.2) 0 0);
+                    color: #fff !important;
+                }
+            }
+            .felan-package-title {
+                @include d-flex();
+                @include align-items-center();
+                @include justify-content-between();
+            }
+        }
+        &.current {
+            border-color: $accent_color;
+            .entry-title {
+                position: relative;
+                display: inline-block;
+            }
+            .entry-title:before {
+                content: "";
+                font-family: "Font Awesome 5 Pro";
+                color: $accent_color;
+                margin-right: 10px;
+            }
+            .recommended {
+                display: none;
+            }
+        }
+    }
+    .time-unit {
+        font-size: 18px;
+        font-weight: 500;
+        text-transform: lowercase;
+        &:before {
+            content: "/";
+            margin-left: -5px;
+        }
+    }
+}
+
+.felan-new-package {
+    margin-top: 32px;
+}
+
+#action-user-package,
+#action-employer-user-package {
+    font-size: 14px;
+    font-weight: 500;
+    color: $primary_color;
+    &:hover {
+        color: $accent_color;
+    }
+}
+
+.package-out-stock {
+    .felan-button {
+        display: block;
+        margin-top: 20px;
+        a {
+            display: inline-block;
+        }
+    }
+    span {
+        color: red;
+    }
+}
+
+@media only screen and (max-width: 1199px) {
+    .felan-package-wrap .felan-package-item {
+        padding: 30px;
+        .felan-package-price {
+            font-size: 32px;
+            margin-bottom: 15px;
+            sup {
+                font-size: 32px;
+            }
+        }
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+    .felan-package-wrap .felan-package-item {
+        padding: 30px 15px;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    .felan-package-wrap .row > div {
+        margin-bottom: 30px;
+    }
+}
+
+@media only screen and (max-width: 575px) {
+    .felan-package-wrap .felan-heading .entry-title {
+        font-size: 32px;
+        font-weight: 500;
+        line-height: 1.4;
+    }
+}

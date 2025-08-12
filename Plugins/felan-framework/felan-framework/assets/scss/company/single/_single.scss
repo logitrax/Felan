@@ -1,0 +1,60 @@
+@import "head";
+@import "overview";
+@import "related";
+@import "review";
+@import "thumbnail";
+@import "projects";
+
+.title-company {
+  font-size: 24px;
+  margin-bottom: 24px;
+}
+
+.company-sidebar {
+  .list-social {
+    justify-content: flex-start;
+  }
+  .felan-location {
+    @include d-flex();
+    @include align-items-center();
+    @include justify-content-between();
+    margin-bottom: 24px;
+    h3 {
+      font-size: 24px;
+      margin-bottom: 0;
+    }
+  }
+}
+
+.felan-rating-warpper {
+  .rating-count {
+    position: relative;
+    i {
+      color: #ffc402;
+      font-weight: bold;
+      margin-right: 0;
+    }
+  }
+  .review-count {
+    color: $secondary_color;
+  }
+}
+
+@media (max-width: 576px) {
+  .company-info {
+    display: block;
+  }
+  .felan-rating-warpper {
+    margin-top: 10px;
+  }
+  .company-head-details .felan-company-header-bottom a {
+    margin-bottom: 8px;
+  }
+  .rating-bars .rating-bars-item {
+    @include flex(0 0 100%);
+    max-width: 100%;
+  }
+  .add-new-review .star-rating {
+    width: 100%;
+  }
+}

@@ -1,0 +1,32 @@
+.felan-company-item.layout-button-jobs {
+  padding: 20px;
+  text-align: center;
+  .logo-company {
+    display: inline-block;
+    width: 80px;
+    height: 80px;
+    line-height: 80px;
+  }
+  .des-company {
+    margin-top: 9px;
+  }
+  .felan-rating-warpper .review-count {
+    display: none;
+  }
+  .company-inner {
+    @include justify-content-center();
+  }
+  .company-available {
+    margin-top: 14px;
+  }
+  .company-img {
+    margin-right: 0;
+    margin-bottom: 8px;
+  }
+  .felan-button {
+    margin-top: 16px;
+    i {
+      font-size: 14px;
+    }
+  }
+}

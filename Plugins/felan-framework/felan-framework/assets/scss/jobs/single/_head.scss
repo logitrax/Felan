@@ -1,0 +1,157 @@
+.felan-jobs-header-top {
+  @include d-flex();
+  @include justify-content-between();
+  @include align-items-center();
+  .logo-company {
+    height: 84px;
+    width: 84px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-right: 16px;
+    margin-top: 10px;
+  }
+  .felan-header-left {
+    @include d-flex();
+    margin-right: 15px;
+    .author-wrapper {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      flex-direction: column;
+      .categories-wrapper,
+      .type-wrapper,
+      .location-wrapper {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        svg {
+          width: 20px;
+        }
+      }
+    }
+    .title-wapper {
+      margin-bottom: 5px;
+      h1 {
+        font-size: 28px;
+        margin-bottom: 0;
+      }
+      .featured {
+        margin-left: 5px;
+        display: inline-block;
+        height: 20px;
+        line-height: 20px;
+        &:before {
+          top: -0.2em;
+        }
+      }
+    }
+    .categories-warpper {
+      margin-left: 15px;
+      @include d-inline-flex();
+      @include align-items-center();
+      i {
+        margin-right: 5px;
+      }
+    }
+    .info {
+      i {
+        color: $accent_color;
+      }
+      .cate-type:after {
+        content: ",";
+      }
+      .cate-type:last-child:after {
+        content: "";
+      }
+      .fa-map-marker-alt,
+      .fa-clock {
+        margin-left: 15px;
+      }
+    }
+    .author-meta {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      .location-wrapper,
+      .type-wrapper {
+        padding: 5px 12px;
+        display: flex;
+        align-items: center;
+        background-color: #f2f4f7;
+        border-radius: 50px;
+        gap: 4px;
+        color: #111;
+        font-size: 14px;
+        font-weight: 500;
+        white-space: nowrap;
+      }
+    }
+  }
+  .felan-header-right {
+    @include d-flex();
+    .toggle-social {
+      margin-right: 25px;
+      .list-social-icon i {
+        color: #fff;
+      }
+    }
+    .added .icon-heart i {
+      color: $accent_color;
+    }
+    a:hover i {
+      color: $accent_color;
+    }
+  }
+  .jobs-view {
+    display: inline-block;
+    position: relative;
+    padding-left: 20px;
+    &:before {
+      content: "";
+      width: 6px;
+      height: 6px;
+      position: absolute;
+      top: 50%;
+      background-color: $secondary_color;
+      border-radius: 50%;
+      left: 4px;
+      @include transform(translateY(-50%));
+    }
+    i {
+      font-weight: 400;
+    }
+    .count {
+      font-weight: 500;
+    }
+  }
+}
+
+.felan-jobs-header-bottom {
+  @include d-flex();
+  @include flex-wrap();
+  margin-top: 24px;
+}
+
+@media (max-width: 1199px) {
+  .jobs-head-details {
+    .title-wapper h1 {
+      font-size: 24px;
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .felan-jobs-header-top {
+    .felan-header-right {
+      display: none;
+    }
+    .felan-header-left {
+      .categories-warpper {
+        margin-top: 5px;
+      }
+    }
+    .logo-company {
+      display: none;
+    }
+  }
+}

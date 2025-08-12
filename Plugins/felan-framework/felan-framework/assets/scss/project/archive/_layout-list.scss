@@ -1,0 +1,107 @@
+.felan-project-item.layout-list {
+  &:hover {
+    @include box-shadow(0 10px 14px -5px rgba(0, 0, 0, 0.05));
+  }
+  .project-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .project-header {
+    @include d-flex();
+    @include justify-content-between();
+  }
+  .project-thumbnail a {
+    border-radius: 8px 0 0 8px;
+    overflow: hidden;
+  }
+  .project-thumbnail img {
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+    border-radius: 8px 0 0 8px;
+  }
+  .project-content {
+    padding: 24px;
+    width: 100%;
+    border: 0;
+    border-radius: 8px;
+    .project-meta ul {
+      column-gap: 15px;
+      row-gap: 8px;
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
+  }
+
+  .project-status-inner {
+    @include d-flex();
+    @include align-items-center();
+    .project-status {
+      width: 22px;
+      margin-top: -8px;
+      margin-right: 15px;
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .felan-project-item.layout-list {
+    @include d-flex();
+    .project-thumbnail {
+      @include flex(0 0 240px);
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .felan-project-item.layout-list {
+    .project-thumbnail {
+      a,
+      img {
+        border-radius: 8px 8px 0 0;
+      }
+    }
+    .project-header-right {
+      display: block;
+    }
+    .project-title {
+      margin-top: 14px;
+    }
+    .project-status-inner {
+      position: absolute;
+      top: 24px;
+      right: 24px;
+      .project-status {
+        margin-top: 0;
+        width: auto;
+        margin-right: 12px;
+      }
+      .btn-add-to-wishlist {
+        width: 36px;
+        height: 36px;
+        background-color: #ffff;
+        border-radius: 50%;
+        text-align: center;
+        display: block;
+      }
+    }
+    .featured {
+      img {
+        position: relative;
+        top: 3px;
+      }
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .felan-project-item.layout-list {
+    .freelancer-bottom {
+      display: block;
+    }
+    .freelancer-salary {
+      margin-top: 15px;
+    }
+  }
+}

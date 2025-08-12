@@ -1,0 +1,270 @@
+.felan-service-dashboard,
+.my-freelancer-package {
+    .entry-title {
+        @include d-flex();
+        @include align-items-center();
+        @include justify-content-between();
+    }
+}
+
+.felan-service-order,
+.felan-disputes{
+    .status {
+        .tooltip[data-title] {
+            cursor: help;
+            &:before {
+                left: 50%;
+                @include transform(translateX(-50%));
+            }
+        }
+    }
+    .start-time{
+        .time {
+            font-weight: 500;
+            color: $primary_color;
+        }
+        > span{
+            display: block;
+        }
+    }
+    .title-my-service{
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: normal;
+    }
+}
+
+#service-submit-pricing {
+    .pricing-heder {
+        @include d-flex();
+        @include align-items-start();
+        @include justify-content-between();
+        width: 100%;
+        padding-left: 8px;
+        padding-right: 8px;
+    }
+    h6 {
+        margin-bottom: 8px;
+    }
+    .header-left {
+        @include d-flex();
+        .form-group {
+            @include d-flex();
+            @include align-items-center();
+            label {
+                margin-bottom: 0;
+                margin-right: 10px;
+            }
+        }
+    }
+}
+
+#form-freelancer-withdraw,
+#form-employer-withdraw{
+    .inner-popup {
+        max-width: 550px;
+    }
+    p {
+        margin-top: 12px;
+        margin-bottom: 0;
+        a {
+            color: $accent_color;
+            font-weight: 500;
+        }
+    }
+    .btn-warpper {
+        text-align: right;
+        padding-top: 20px;
+    }
+}
+
+#form-service-order-refund,
+#form-project-order-refund{
+    .inner-popup {
+        max-width: 440px;
+    }
+    .des {
+        margin-top: 6px;
+        margin-bottom: 0;
+    }
+    .tell-us{
+        p{
+            font-weight: 500;
+            color: $primary_color;
+            margin-bottom: 10px;
+        }
+        label{
+            font-size: 16px;
+            color: #333;
+            margin-bottom: 10px;
+        }
+        input[type="radio"]{
+            width: 18px;
+            height: 18px;
+            -webkit-appearance: radio;
+            -moz-appearance: radio;
+            appearance: radio;
+            margin-right: 5px;
+            position: relative;
+            top: 3px;
+        }
+    }
+
+    .btn-warpper {
+        padding-top: 10px;
+    }
+}
+
+#form-service-view-reason {
+    .content-refund-reason {
+        margin-top: 12px;
+    }
+}
+
+#my-service,
+.felan-service-order,
+.felan-disputes,
+.felan-project-disputes,
+#employer-wishlist,
+.felan-package-wrap.package-service {
+    .cate + .cate {
+        &:before {
+            content: ", ";
+        }
+    }
+    .content {
+        max-width: 370px;
+    }
+    .title-my-service {
+        .featured {
+            top: -3px;
+        }
+        img {
+            width: 18px;
+        }
+    }
+    .price {
+        font-weight: 500;
+        color: $primary_color;
+    }
+    .service-header,
+    .project-header{
+        @include d-flex();
+        @include align-items-center();
+    }
+    .thumbnail {
+        width: 70px;
+        height: 70px;
+        border-radius: 8px;
+        object-fit: cover;
+        margin-right: 12px;
+    }
+    .start-time {
+        min-width: 200px;
+    }
+    .status{
+        .button-link{
+            font-size: 14px;
+        }
+    }
+}
+
+#felan_payment_service,
+#felan_payment_project {
+    &:hover {
+        background-color: var(--felan-color-accent);
+        color: #fff;
+    }
+    .felan-loading-effect {
+        position: relative;
+        &:before {
+            content: none;
+        }
+    }
+    .felan-dual-ring {
+        width: 18px;
+        height: 18px;
+        position: relative;
+        @include transform(none);
+        &:after {
+            width: 18px;
+            height: 18px;
+            border-width: 2px;
+            border-style: solid;
+            border-color: #fff transparent #fff transparent;
+        }
+    }
+}
+
+.felan-freelancer-withdraw,
+.felan-employer-withdraw{
+    .total-action {
+        margin-bottom: 20px;
+        .entry-number {
+            font-size: 28px;
+        }
+    }
+    .entry-title {
+        @include d-flex();
+        @include justify-content-between();
+    }
+}
+
+.felan-employer-service{
+    >.entry-title > h4{
+        margin-bottom: 0;
+    }
+}
+
+#service_basic_price-error,
+#service_basic_time-error{
+    font-size: 12px;
+    color: red;
+    font-weight: 400;
+}
+
+@media (max-width: 767px) {
+    .felan-service-order,
+    .felan-disputes{
+        .table-dashboard {
+            tbody td {
+                &:first-child {
+                    min-width: auto;
+                }
+                &:nth-child(2) {
+                    min-width: 350px;
+                }
+            }
+        }
+    }
+    #service-submit-pricing {
+        .pricing-heder {
+            display: block;
+        }
+        .table-pricing td,
+        .table-pricing tr th {
+            min-width: 200px;
+        }
+    }
+    #service-submit-pricing,
+    #service-submit-pricing {
+        border: 0;
+        width: 500px;
+        min-width: 200px;
+    }
+}
+
+@media (max-width: 576px) {
+    .my-service,
+    .my-freelancer-package {
+        .entry-title {
+            display: block;
+        }
+        .felan-button {
+            margin-bottom: 20px;
+        }
+    }
+}

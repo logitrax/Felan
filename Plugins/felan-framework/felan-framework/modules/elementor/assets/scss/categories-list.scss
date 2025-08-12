@@ -1,0 +1,65 @@
+@import "mixins";
+@import "variables";
+
+.felan-categories-list {
+  @include d-flex();
+  @include flex-wrap();
+  padding-top: 25px;
+  .list-cate-item {
+    margin-bottom: 20px;
+    @include flex(0 0 50%);
+  }
+  ul.list-all-categories {
+    > li {
+      padding: 0 !important;
+      > a {
+        @include d-flex();
+        @include align-items-center();
+        font-weight: 500 !important;
+        color: $primary_color !important;
+        font-size: 16px !important;
+        &:hover {
+          color: $accent_color !important;
+        }
+        i {
+          font-size: 18px;
+          padding-left: 0 !important;
+          left: 0 !important;
+          transform: none !important;
+        }
+        i,
+        svg {
+          margin-right: 12px;
+        }
+      }
+    }
+  }
+  ul.sub-all-categories {
+    padding-top: 15px !important;
+    padding-left: 30px !important;
+    ul.sub-all-categories {
+      padding: 0 !important;
+    }
+    li {
+      padding: 0 !important;
+      + li {
+        margin-top: 8px;
+      }
+    }
+    a {
+      font-weight: 400 !important;
+      color: $text_color !important;
+      &:hover {
+        color: $accent_color !important;
+      }
+    }
+  }
+  ul {
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 0;
+    display: block;
+    position: static !important;
+    width: 100% !important;
+  }
+}

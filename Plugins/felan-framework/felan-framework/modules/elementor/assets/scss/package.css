@@ -1,0 +1,42 @@
+.felan-package-layout-02 .felan-package-item .felan-package-price {
+  border-bottom: 0;
+}
+.felan-package-layout-02 .felan-package-item .felan-package-choose {
+  margin-top: 0;
+}
+
+.felan-package-layout-03 .felan-package-item .felan-package-price {
+  border-bottom: 0;
+  padding-bottom: 20px;
+  text-align: center;
+}
+.felan-package-layout-03 .felan-package-item .felan-package-choose {
+  margin-top: 0;
+  border-bottom: 1px solid var(--felan-color-border);
+  padding-bottom: 32px;
+}
+.felan-package-layout-03 .felan-package-item ul.list-group li i {
+  position: relative;
+  top: -2px;
+  width: 20px;
+  height: 20px;
+  line-height: 20px;
+  background-color: #3ab446;
+  color: #fff;
+  border-radius: 50%;
+  text-align: center;
+  font-size: 10px;
+}
+.felan-package-layout-03 .felan-package-item .freelancer-avatar {
+  margin-right: 0;
+}
+
+@media (max-width: 576px) {
+  .felan-package-layout-01 .felan-package-wrap,
+  .felan-package-layout-02 .felan-package-wrap,
+  .felan-package-layout-03 .felan-package-wrap {
+    margin-top: 0;
+  }
+}
+
+/*# sourceMappingURL=package.css.map */

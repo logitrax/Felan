@@ -1,0 +1,80 @@
+.felan-freelancers-item.layout-grid {
+  .header-left {
+    @include d-flex();
+    @include align-items-center();
+    .freelancers-title {
+      margin-top: 0;
+    }
+    .company-img {
+      flex: 0 0 70px;
+      max-width: 70px;
+    }
+  }
+  .freelancers-title {
+    margin-top: 14px;
+    margin-bottom: 5px;
+  }
+  .review-count {
+    display: none;
+  }
+  .freelancer-location {
+    margin-right: 0;
+    margin-top: 14px;
+  }
+  .freelancer-language {
+    margin-top: 8px;
+    @include d-flex();
+    @include align-items-center();
+  }
+  .freelancer-skills {
+    margin-top: 22px;
+  }
+  .freelancer-salary {
+    font-size: 16px;
+    font-weight: 400;
+    color: #111;
+    span {
+      font-size: 18px;
+      font-weight: 500;
+    }
+  }
+  .freelancer-location,
+  .freelancer-language {
+    margin-right: 0;
+    i {
+      width: 18px;
+    }
+  }
+  .freelancer-center {
+    display: block;
+  }
+  .freelancer-bottom {
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid $border-color;
+  }
+  .des-freelancer {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .felan-freelancers-item.layout-grid {
+    .header-left {
+      flex-wrap: wrap;
+      gap: 10px;
+      flex-direction: column;
+      align-items: unset;
+    }
+    .freelancers-title {
+      margin-bottom: 0;
+    }
+    .felan-rating-warpper {
+      margin-top: 0;
+    }
+  }
+}

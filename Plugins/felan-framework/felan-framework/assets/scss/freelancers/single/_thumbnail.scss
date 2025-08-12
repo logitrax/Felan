@@ -1,0 +1,32 @@
+.has-large-thumbnail {
+    &.freelancer-thumbnail-details {
+        img {
+            border-radius: 16px;
+            width: 100%;
+        }
+    }
+}
+
+.freelancer-thumbnail-details {
+    margin-bottom: 20px;
+    &:not(.has-large-thumbnail) {
+        .container {
+            padding-right: 0;
+            padding-left: 0;
+        }
+    }
+    img {
+        border-radius: 16px 16px 0 0;
+        width: 100%;
+        object-fit: cover;
+    }
+}
+
+@media (max-width: 576px) {
+    .has-large-thumbnail {
+        &.freelancer-thumbnail-details {
+            margin-top: 25px;
+            margin-bottom: -30px;
+        }
+    }
+}

@@ -1,0 +1,222 @@
+.nav-categories-tabs ul {
+  padding: 0;
+  list-style: none;
+  margin: 0 0 20px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.nav-categories-tabs.vertical li a {
+  display: flex;
+  align-items: center;
+  padding: 12px 24px;
+}
+.nav-categories-tabs.vertical ul li {
+  margin-bottom: 0;
+}
+.nav-categories-tabs.vertical li a .icon {
+  width: 36px;
+  height: 36px;
+  line-height: 42px;
+  background-color: var(--felan-color-accent);
+  border-radius: 50%;
+  text-align: center;
+  margin-right: 10px;
+}
+.nav-categories-tabs.vertical li a {
+  font-size: 18px;
+  font-weight: 500;
+  border-radius: 8px;
+  border-color: transparent;
+}
+.nav-categories-tabs.vertical li.active a {
+  border-color: var(--felan-color-accent);
+  background-color: var(--felan-color-accent);
+  color: #fff;
+}
+.nav-categories-tabs.vertical li.active a .icon {
+  background-color: #fff;
+}
+.nav-categories-tabs.vertical li.active a svg {
+  color: var(--felan-color-accent);
+}
+.nav-categories-tabs.vertical li a svg {
+  color: #fff;
+}
+.nav-categories-tabs.vertical li a path {
+  stroke: currentColor;
+}
+.felan-categories-tabs.layout-vertical .btn-readmore {
+  margin-left: 0;
+}
+.nav-categories-tabs ul li {
+  margin-bottom: 20px;
+}
+.nav-categories-tabs ul li:last-child {
+  margin-right: 0;
+}
+.nav-categories-tabs .nav-item a {
+  display: flex;
+  padding: 9px 24px;
+  border-radius: 8px;
+  background-color: transparent;
+  transition: all 0.3s ease;
+  color: var(--felan-color-text);
+  font-size: 16px;
+  font-weight: 500;
+  border: 1px solid transparent;
+  border-radius: 300px;
+}
+.nav-categories-tabs .nav-item a:hover {
+  color: var(--felan-color-accent);
+}
+.nav-categories-tabs .nav-item.active a {
+  border-color: #e5e7eb;
+  color: var(--felan-color-accent);
+}
+.nav-categories-tabs.underline .nav-item {
+  margin-right: 32px;
+}
+.nav-categories-tabs.underline .nav-item:last-child {
+  margin-right: 0;
+}
+.nav-categories-tabs.underline .nav-item a {
+  padding: 0;
+  border-top: 0;
+  border-left: 0;
+  border-right: 0;
+  border-bottom: 2px solid transparent;
+  border-radius: 0;
+  line-height: 1.2;
+}
+.nav-categories-tabs.underline .nav-item.active a {
+  border-color: var(--felan-color-accent);
+  color: var(--felan-color-primary);
+}
+.nav-categories-tabs .felan-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background-color: var(--felan-color-accent);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  font-size: 16px;
+}
+.nav-categories-tabs .title {
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--felan-color-primary);
+  transition: all 0.3s ease;
+}
+.content-categories-tabs .categories-tabs-item {
+  display: none;
+}
+.content-categories-tabs .categories-tabs-item.active {
+  display: block;
+}
+.content-categories-tabs .categories-tabs-item-inner {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -15px;
+  margin-right: -15px;
+  row-gap: 30px;
+}
+.content-categories-tabs .categories-tabs-item-inner > div {
+  flex: 0 0 50%;
+  max-width: 50%;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+.content-categories-tabs .categories-tabs-item-inner.column-01 > div {
+  flex: 0 0 100%;
+  max-width: 100%;
+}
+.content-categories-tabs
+  .categories-tabs-item-inner.column-02
+  .jobs-item-inner.layout-list
+  .jobs-archive-center,
+.content-categories-tabs
+  .categories-tabs-item-inner.column-03
+  .jobs-item-inner.layout-list
+  .jobs-archive-center {
+  flex-wrap: wrap;
+  flex-direction: column;
+  row-gap: 8px;
+  align-items: unset;
+  justify-content: unset;
+}
+.content-categories-tabs .categories-tabs-item-inner.column-03 > div {
+  flex: 0 0 33.33%;
+  max-width: 33.33%;
+}
+.content-categories-tabs .categories-tabs-item-inner .layout-list {
+  height: 100%;
+}
+.content-categories-tabs .btn-readmore {
+  margin-top: 40px;
+  display: table;
+  margin-left: auto;
+  margin-right: auto;
+}
+.content-categories-tabs .jobs-item-inner > div,
+.content-categories-tabs .service-item-inner > div,
+.content-categories-tabs .freelancer-item-inner > div,
+.content-categories-tabs .project-item-inner > div,
+.content-categories-tabs .company-item-inner > div {
+  height: 100%;
+}
+.content-categories-tabs .jobs-des,
+.content-categories-tabs .des-project,
+.content-categories-tabs .des-service,
+.content-categories-tabs .des-freelancer,
+.content-categories-tabs .des-company {
+  display: none;
+}
+@media screen and (min-width: 992px) {
+  .felan-categories-tabs.layout-vertical {
+    display: flex;
+  }
+  .felan-categories-tabs.layout-vertical .nav-categories-tabs {
+    flex: 0 0 300px;
+    max-width: 300px;
+    margin-right: 100px;
+  }
+  .felan-categories-tabs.layout-vertical .nav-categories-tabs ul {
+    justify-content: start;
+  }
+  .felan-categories-tabs.layout-vertical .nav-categories-tabs ul li {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 991px) {
+  .content-categories-tabs .categories-tabs-item-inner > div {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+  .content-categories-tabs .categories-tabs-item-inner.column-03 > div {
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+  .nav-categories-tabs ul li {
+    margin-bottom: 10px;
+  }
+  .nav-categories-tabs .nav-item a {
+    padding: 6px 16px;
+  }
+}
+@media screen and (max-width: 767px) {
+  .content-categories-tabs .categories-tabs-item-inner.column-03 > div {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .felan-categories-tabs.layout-vertical .nav-categories-tabs ul {
+    display: block;
+  }
+}

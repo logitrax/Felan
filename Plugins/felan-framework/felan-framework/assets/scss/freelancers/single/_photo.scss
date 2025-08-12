@@ -1,0 +1,19 @@
+.freelancer-gallery-details {
+    figure img {
+        height: 200px;
+        object-fit: cover;
+        border-radius: 8px;
+    }
+    .row {
+        margin-top: -15px;
+        margin-bottom: -15px;
+    }
+    .felan-freelancer-portfolio-item {
+        padding-top: 15px;
+        padding-bottom: 15px;
+        figure img {
+            width: 100%;
+            object-fit: cover;
+        }
+    }
+}

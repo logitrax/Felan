@@ -1,0 +1,142 @@
+<?php
+if (!defined('ABSPATH')) {
+    exit; // Exit if accessed directly
+}
+wp_enqueue_script(FELAN_PLUGIN_PREFIX . 'employer-disputes');
+wp_localize_script(
+    FELAN_PLUGIN_PREFIX . 'employer-disputes',
+    'felan_disputes_vars',
+    array(
+        'ajax_url' => FELAN_AJAX_URL,
+        'not_disputes' => esc_html__('No disputes found', 'felan-framework'),
+    )
+);
+
+global $current_user;
+$user_id = $current_user->ID;
+$posts_per_page = 10;
+$args = array(
+    'post_type' => 'disputes',
+    'ignore_sticky_posts' => 1,
+    'author' => $user_id,
+    'posts_per_page' => $posts_per_page,
+    'offset' => (max(1, get_query_var('paged')) - 1) * $posts_per_page,
+);
+$data = new WP_Query($args);
+?>
+ <div class="felan-disputes entry-my-page">
+    <div class="search-dashboard-warpper">
+        <div class="search-left">
+            <div class="select2-field">
+                <select class="search-control felan-select2" name="disputes_status">
+                    <option value=""><?php esc_html_e('All status', 'felan-framework') ?></option>
+                    <option value="open"><?php esc_html_e('Open', 'felan-framework') ?></option>
+                    <option value="close"><?php esc_html_e('Closed', 'felan-framework') ?></option>
+                    <option value="refund"><?php esc_html_e('Refunded', 'felan-framework') ?></option>
+                </select>
+            </div>
+            <div class="action-search">
+                <input class="disputes-search-control" type="text" name="disputes_search" placeholder="<?php esc_attr_e('Search disputes title', 'felan-framework') ?>">
+                <button class="btn-search">
+                    <i class="far fa-search"></i>
+                </button>
+            </div>
+        </div>
+        <div class="search-right">
+            <label class="text-sorting"><?php esc_html_e('Sort by', 'felan-framework') ?></label>
+            <div class="select2-field">
+                <select class="search-control action-sorting felan-select2" name="disputes_sort_by">
+                    <option value="newest"><?php esc_html_e('Newest', 'felan-framework') ?></option>
+                    <option value="oldest"><?php esc_html_e('Oldest', 'felan-framework') ?></option>
+                </select>
+            </div>
+        </div>
+    </div>
+    <?php if ($data->have_posts()) { ?>
+        <div class="table-dashboard-wapper">
+            <table class="table-dashboard" id="disputes">
+                <thead>
+                <tr>
+                    <th><?php esc_html_e('Service Name', 'felan-framework') ?></th>
+                    <th><?php esc_html_e('Date', 'felan-framework') ?></th>
+                    <th><?php esc_html_e('Price', 'felan-framework') ?></th>
+                    <th><?php esc_html_e('Freelancer', 'felan-framework') ?></th>
+                    <th><?php esc_html_e('Status', 'felan-framework') ?></th>
+                </tr>
+                </thead>
+                <tbody>
+                <?php while ($data->have_posts()) : $data->the_post(); ?>
+                    <?php
+                    $disputes_id = get_the_ID();
+                    $order_id = get_post_meta($disputes_id, FELAN_METABOX_PREFIX . 'disputes_service_order_id', true);
+                    $service_id = get_post_meta($order_id, FELAN_METABOX_PREFIX . 'service_order_item_id', true);
+                    $public_date = get_the_date(get_option('date_format'));
+                    $thumbnail = get_the_post_thumbnail_url($service_id, '70x70');
+                    $author_id = get_post_field('post_author', $service_id);
+                    $author_name = get_the_author_meta('display_name', $author_id);
+
+                    $service_featured = get_post_meta($service_id, FELAN_METABOX_PREFIX . 'service_featured', true);
+                    $status = get_post_meta($disputes_id, FELAN_METABOX_PREFIX . 'disputes_status', true);
+                    $price_order = get_post_meta($order_id, FELAN_METABOX_PREFIX . 'service_order_price', true);
+                    ?>
+                    <tr>
+                        <td>
+                            <div class="service-header">
+                                <?php if (!empty($thumbnail)) : ?>
+                                    <img class="thumbnail" src="<?php echo $thumbnail; ?>" alt="" />
+                                <?php endif; ?>
+                                <div class="content">
+                                    <h3 class="title-my-service">
+                                        <a href="<?php echo get_the_permalink($service_id) ?>">
+                                            <?php echo get_the_title($service_id); ?>
+                                            <?php if ($service_featured === '1') : ?>
+                                                <span class="tooltip featured" data-title="<?php esc_attr_e('Featured', 'felan-framework') ?>">
+                                                        <img src="<?php echo esc_attr(FELAN_PLUGIN_URL . 'assets/images/icon-featured.svg'); ?>" alt="<?php echo esc_attr('featured', 'felan-framework') ?>">
+                                                    </span>
+                                            <?php endif; ?>
+                                        </a>
+                                    </h3>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="start-time">
+                            <span class="time"><?php echo $public_date; ?></span>
+                        </td>
+                        <td class="price">
+                            <?php echo $price_order; ?>
+                        </td>
+                        <td class="author">
+                            <?php echo esc_html($author_name); ?>
+                        </td>
+                        <td class="status">
+                            <?php if($status == 'close') : ?>
+                                <span class="label label-close tooltip"><?php esc_html_e('Closed', 'felan-framework') ?></span>
+                            <?php elseif ($status == 'refund') : ?>
+                                <span class="label label-open tooltip"><?php esc_html_e('Refunded', 'felan-framework') ?></span>
+                            <?php else : ?>
+                                <span class="label label-inprogress tooltip"><?php esc_html_e('Open', 'felan-framework') ?></span>
+                            <?php endif; ?>
+                        </td>
+                        <td>
+                            <a href="<?php echo esc_url(felan_get_permalink('disputes')); ?>?order_id=<?php echo esc_attr($order_id) ?>&disputes_id=<?php echo esc_attr($disputes_id) ?>"
+                               class="service-detail felan-button"><?php echo esc_html__('Detail', 'felan-framework') ?></a>
+                        </td>
+                    </tr>
+                <?php endwhile; ?>
+                </tbody>
+            </table>
+            <div class="felan-loading-effect"><span class="felan-dual-ring"></span></div>
+        </div>
+    <?php } else { ?>
+        <div class="item-not-found"><?php esc_html_e('No item found', 'felan-framework'); ?></div>
+    <?php } ?>
+    <?php $total_post = $data->found_posts;
+    if ($total_post > $posts_per_page) { ?>
+        <div class="pagination-dashboard pagination-wishlist">
+            <?php $max_num_pages = $data->max_num_pages;
+            felan_get_template('global/pagination.php', array('total_post' => $total_post, 'max_num_pages' => $max_num_pages, 'type' => 'dashboard', 'layout' => 'number'));
+            wp_reset_postdata(); ?>
+        </div>
+    <?php } ?>
+
+</div>

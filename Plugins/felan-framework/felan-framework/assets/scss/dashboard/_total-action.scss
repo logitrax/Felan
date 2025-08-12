@@ -1,0 +1,59 @@
+.felan-dashboard {
+    .total-action {
+        .entry-title {
+            font-size: 13px;
+            font-weight: 500;
+            color: $secondary_color;
+            text-transform: uppercase;
+            margin-bottom: 5px;
+        }
+        .entry-number {
+            position: relative;
+            display: block;
+            font-size: 40px;
+            font-weight: 500;
+            line-height: 1.26;
+            color: $primary_color;
+        }
+        .icon-total {
+            margin-left: auto;
+            width: 34px;
+            height: 34px;
+            line-height: 34px;
+            border-radius: 8px;
+            text-align: center;
+        }
+        ul {
+            list-style: none;
+            padding-left: 0;
+            margin-bottom: 6px;
+            margin-left: -6px;
+            margin-right: -6px;
+        }
+        li {
+            padding: 6px;
+            > div {
+                @include d-flex();
+                border-radius: 8px;
+                border: solid 1px $border_color;
+                background-color: #ffffff;
+                padding: 20px;
+            }
+        }
+        .icon-dashboard-01 .icon-total {
+            background-color: #FF585C;
+        }
+        .icon-dashboard-02 .icon-total {
+            background-color: #FFC402;
+        }
+        .icon-dashboard-03 .icon-total {
+            background-color: #3AB446;
+        }
+        .icon-dashboard-04 .icon-total {
+            background-color: #7744A7;
+        }
+    }
+    .recent-action {
+        margin-top: 40px;
+    }
+}

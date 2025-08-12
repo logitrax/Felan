@@ -1,0 +1,251 @@
+.felan-payment-for {
+  .felan-package-item {
+    .felan-package-title {
+      margin-bottom: 20px;
+      .entry-title {
+        margin-top: 0 !important;
+      }
+    }
+    .felan-total-price {
+      margin-top: 30px;
+      padding-top: 30px;
+      border-top: solid 1px $border_color;
+      span {
+        display: block;
+        margin-bottom: 5px;
+      }
+      .price {
+        display: block;
+        font-size: 22px;
+        font-weight: 500;
+        color: $primary_color;
+      }
+      sup {
+        font-size: 18px;
+        top: 0;
+      }
+    }
+    .felan-button {
+      margin-top: 20px;
+    }
+  }
+}
+
+.payment-wrap {
+  .entry-title {
+    font-size: 24px;
+    margin-top: 25px !important;
+    margin-bottom: 30px;
+  }
+}
+
+.felan-payment-method-wrap {
+  .radio {
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border: solid 1px #d8d8d8;
+    background-color: #fff;
+    &.active {
+      border-color: $accent_color;
+      background: $accent_color;
+      color: #fff;
+      @include box-shadow(0 0 20px 0 rgba(0, 0, 0, 0.05));
+    }
+    + .radio {
+      margin-top: 20px;
+    }
+    &.wire-transfer {
+      label {
+        padding: 29px 15px;
+        i {
+          margin-right: 10px;
+        }
+      }
+    }
+    label {
+      display: block;
+      padding: 15px;
+      margin-bottom: 0;
+      cursor: pointer;
+    }
+    img {
+      width: 80px;
+      height: 48px;
+      object-fit: contain;
+      margin-right: 10px;
+    }
+    input {
+      display: none;
+    }
+  }
+}
+
+.payment-wrap .terms-conditions {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  strong {
+    color: $accent_color;
+  }
+}
+
+.felan-payment-completed-wrap {
+  .inner-payment-completed {
+    max-width: 480px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    .panel-heading {
+      margin-top: 25px;
+      margin-bottom: 25px;
+    }
+    h3 {
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+  }
+  .list-group {
+    padding-left: 0;
+    margin-bottom: 0;
+    border: 1px solid $border_color;
+    border-radius: 5px;
+    li {
+      @include d-flex();
+      @include flex-wrap();
+      @include align-items-center();
+      @include justify-content-between();
+      padding: 20px;
+      strong {
+        color: #2a2a2a;
+        font-weight: 500;
+      }
+      + li {
+        border-top: 1px solid $border_color;
+      }
+    }
+  }
+  .felan-button {
+    display: inline-block;
+    margin-top: 30px;
+  }
+  .card-info table {
+    th,
+    td {
+      padding: 20px;
+      font-weight: 400;
+      color: #2d2d2d;
+    }
+  }
+}
+
+.felan-payment-completed-wrap {
+  padding-top: 50px;
+}
+
+#felan_payment_package,
+#felan_payment_freelancer_package {
+  &:hover {
+    .felan-dual-ring:after {
+      border-color: $accent_color transparent $accent_color;
+    }
+  }
+  .felan-loading-effect {
+    position: sticky;
+    &:before {
+      background-color: transparent;
+    }
+  }
+  .felan-dual-ring {
+    position: static;
+    transform: none;
+    width: 16px;
+    height: 16px;
+    &:after {
+      height: 16px;
+      border-width: 2px;
+      margin-left: 8px;
+      border-color: #fff transparent #fff;
+      width: 16px;
+    }
+  }
+}
+
+.package-project {
+  .package-header{
+    .title-my-project{
+      font-size: 18px;
+    }
+    p{
+      margin-bottom: 0;
+    }
+  }
+  .package-content {
+    p {
+      @include d-flex();
+      @include justify-content-between();
+      padding-top: 12px;
+      margin-top: 12px;
+      border-top: 1px solid $border-color;
+      margin-bottom: 0;
+    }
+    .title {
+      font-weight: 500;
+      @include d-flex();
+      @include align-items-center();
+      i,svg{
+        margin-right: 6px;
+      }
+    }
+    .price {
+      font-weight: 500;
+      color: $primary_color;
+    }
+    .price-fee {
+      font-weight: 500;
+      color: #ed0006;
+    }
+  }
+  .package-bottom {
+    padding-top: 20px;
+    margin-top: 20px;
+    border-top: 1px solid $border-color;
+    p {
+      @include d-flex();
+      @include justify-content-between();
+      &:first-child {
+        margin-bottom: 10px;
+      }
+    }
+    p:first-child,
+    .delivery-time {
+      font-weight: 500;
+      color: $primary_color;
+    }
+  }
+}
+
+//razorpay
+#btn-razorpay,
+#btn-razorpay-cancel {
+  background-color: $accent_color;
+  color: #fff;
+  padding: 10px 26px;
+  border: 1px solid $accent_color;
+  border-radius: 3em;
+  cursor: pointer;
+}
+
+#btn-razorpay[disabled="true"] {
+  cursor: not-allowed;
+}
+
+@media only screen and (max-width: 575px) {
+  .felan-package-wrap {
+    margin-top: 40px;
+  }
+}
+
+@media only screen and (max-width: 479px) {
+  .felan-payment-completed-wrap .list-group li {
+    padding: 20px;
+  }
+}

@@ -1,0 +1,87 @@
+.felan-jobs-item.layout-list {
+  padding-bottom: 20px;
+  .price {
+    color: $primary_color;
+    font-weight: 500;
+  }
+  .jobs-archive-center {
+    margin-top: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    ul {
+      display: flex;
+      gap: 12px;
+      flex-direction: row;
+    }
+    li {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+  }
+  .jobs-title {
+    margin-top: 8px;
+  }
+  .jobs-archive-header {
+    @include d-flex();
+    @include justify-content-between();
+    .days {
+      margin-bottom: 0;
+      margin-right: 8px;
+      font-size: 14px;
+    }
+  }
+  .jobs-header-left {
+    @include d-flex();
+    @include align-items-center();
+    margin-right: 15px;
+  }
+  .jobs-header-right {
+    @include d-flex();
+    @include align-items-center();
+    height: 24px;
+  }
+  .jobs-archive-footer {
+    @include d-flex();
+    flex-direction: column;
+    .days {
+      margin-bottom: 0;
+    }
+  }
+  .jobs-footer-left {
+    margin-right: 15px;
+  }
+  .logo-company {
+    margin-right: 8px;
+  }
+}
+
+@media (max-width: 767px) {
+  .felan-jobs-item.layout-list {
+    .jobs-archive-header {
+      flex-wrap: wrap;
+      flex-direction: column;
+      margin-top: 8px;
+    }
+    .jobs-header-right {
+      width: 100%;
+      margin-top: 8px;
+      .days {
+        flex: 1;
+      }
+    }
+    .jobs-archive-center {
+      flex-direction: column;
+      align-items: unset;
+      justify-content: unset;
+      row-gap: 4px;
+      ul {
+        flex-wrap: wrap;
+        margin-bottom: 12px;
+      }
+    }
+  }
+}

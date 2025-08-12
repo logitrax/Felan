@@ -1,0 +1,250 @@
+.felan-pricing .felan-pricing-features {
+  margin: 0;
+  padding: 0;
+}
+
+.felan-pricing .felan-pricing-features li {
+  list-style-type: none;
+}
+
+.felan-pricing .felan-pricing-ribbon {
+  position: absolute;
+  top: 0;
+  right: 23px;
+  padding: 8px 25px;
+  font-size: 18px;
+  font-weight: 400;
+  border-radius: 8px;
+  background: #ffc402;
+  color: #fff;
+  transform: translateY(-50%);
+}
+
+.felan-pricing-style-01 {
+  text-align: center;
+}
+
+.felan-pricing-style-01 .inner,
+.felan-pricing-style-02 .felan-pricing .inner,
+.felan-pricing-style-03 .felan-pricing .inner {
+  position: relative;
+  height: 100%;
+  margin: 0 auto;
+  background-color: #fff;
+  padding: 75px 30px 61px;
+}
+
+.felan-pricing-style-01 .felan-pricing-header {
+  z-index: 1;
+  position: relative;
+  margin-bottom: 39px;
+}
+
+.felan-pricing-style-01 .felan-button {
+  width: 180px;
+  max-width: 100%;
+}
+
+.felan-pricing-style-01 .price-wrap-inner {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.felan-pricing-style-01 .felan-pricing-price {
+  font-size: 60px;
+  font-weight: 500;
+  line-height: 0.8;
+  margin: 0;
+}
+
+.felan-pricing-style-01 .felan-pricing-currency {
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 1;
+  margin-bottom: 0;
+  align-self: flex-start;
+  margin-right: 3px;
+}
+
+.felan-pricing-style-01 .felan-pricing-period {
+  font-size: 15px;
+  font-weight: 300;
+  font-style: italic;
+  margin-bottom: 0;
+  color: #ababab;
+  align-self: flex-end;
+}
+
+.felan-pricing-style-01 .title {
+  font-size: 24px;
+  line-height: 0.8;
+}
+
+.felan-pricing-style-01 .felan-pricing-features {
+  font-size: 15px;
+  max-width: 270px;
+  margin: 29px auto 0;
+}
+
+.felan-pricing-style-01 .felan-pricing-features li {
+  position: relative;
+  display: block;
+  padding: 7px 0;
+}
+
+.felan-pricing-style-01 .felan-pricing-features li i {
+  font-size: 16px;
+  margin-right: 5px;
+}
+
+.felan-pricing-style-01 .felan-pricing-footer {
+  padding-top: 42px;
+}
+
+.felan-pricing-style-02 .felan-pricing .inner,
+.felan-pricing-style-03 .felan-pricing .inner {
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.05);
+  padding: 25px 30px 37px;
+}
+
+.felan-pricing-style-02 .felan-pricing .felan-pricing-header,
+.felan-pricing-style-03 .felan-pricing .felan-pricing-header {
+  z-index: 1;
+  position: relative;
+  margin-bottom: 26px;
+}
+
+.felan-pricing-style-02 .felan-pricing .felan-pricing-body,
+.felan-pricing-style-03 .felan-pricing .felan-pricing-body {
+  margin-top: 33px;
+  padding-top: 22px;
+  border-top: 1px solid #eee;
+}
+
+.felan-pricing-style-02 .felan-pricing .felan-button,
+.felan-pricing-style-03 .felan-pricing .felan-button {
+  width: 100%;
+}
+
+.felan-pricing-style-02 .felan-pricing .price-wrap,
+.felan-pricing-style-03 .felan-pricing .price-wrap {
+  color: var(--felan-color-primary);
+}
+
+.felan-pricing-style-02 .felan-pricing .price-wrap-inner,
+.felan-pricing-style-03 .felan-pricing .price-wrap-inner {
+  display: flex;
+  align-items: flex-start;
+}
+
+.felan-pricing-style-02 .felan-pricing .felan-pricing-price,
+.felan-pricing-style-03 .felan-pricing .felan-pricing-price {
+  font-size: 40px;
+  line-height: 1;
+  font-weight: 600;
+  margin: 0;
+}
+
+.felan-pricing-style-02 .felan-pricing .felan-pricing-currency,
+.felan-pricing-style-03 .felan-pricing .felan-pricing-currency {
+  font-size: 40px;
+  line-height: 1;
+  font-weight: 600;
+}
+
+.felan-pricing-style-02 .felan-pricing .felan-pricing-period,
+.felan-pricing-style-03 .felan-pricing .felan-pricing-period {
+  display: block;
+  font-size: 15px;
+  margin: 15px 0 0;
+  color: #777;
+}
+
+.felan-pricing-style-02 .felan-pricing .title,
+.felan-pricing-style-03 .felan-pricing .title {
+  font-size: 18px;
+  line-height: 0.8;
+}
+
+.felan-pricing-style-02 .felan-pricing .felan-pricing-features,
+.felan-pricing-style-03 .felan-pricing .felan-pricing-features {
+  font-size: 15px;
+}
+
+.felan-pricing-style-02 .felan-pricing .felan-pricing-features li,
+.felan-pricing-style-03 .felan-pricing .felan-pricing-features li {
+  position: relative;
+  display: block;
+  padding: 6px 0;
+}
+
+.felan-pricing-style-02 .felan-pricing .felan-pricing-features li i,
+.felan-pricing-style-03 .felan-pricing .felan-pricing-features li i {
+  font-size: 12px;
+  margin-right: 14px;
+}
+
+.felan-pricing-style-02 .felan-pricing .felan-pricing-footer,
+.felan-pricing-style-03 .felan-pricing .felan-pricing-footer {
+  padding-top: 30px;
+}
+
+.felan-pricing-style-03 .felan-pricing .inner {
+  background-color: unset;
+}
+
+.felan-pricing-style-03 .felan-pricing .felan-pricing-header {
+  margin-bottom: 12px;
+}
+
+.felan-pricing-style-03 .felan-pricing .title {
+  color: #1f72f2;
+}
+
+.felan-pricing-style-03 .felan-pricing .felan-pricing-currency,
+.felan-pricing-style-03 .felan-pricing .felan-pricing-price {
+  font-size: 34px;
+  font-weight: 500;
+}
+
+.felan-pricing-style-03 .felan-pricing .felan-pricing-period {
+  font-size: 18px;
+  font-weight: 400;
+  margin: 8px 0 0 4px;
+}
+
+.felan-pricing-style-03 .felan-pricing .felan-pricing-period::before {
+  content: "/";
+}
+
+.felan-pricing-style-03 .felan-pricing .felan-pricing-features li {
+  display: flex;
+}
+
+.felan-pricing-style-03 .felan-pricing .felan-pricing-features li .fa-check {
+  color: #33ac2e;
+}
+
+.felan-pricing-style-03 .felan-pricing .felan-pricing-footer .felan-button {
+  text-align: center;
+  border: 1px solid #1f72f2;
+  color: #1f72f2;
+  background-color: #fff;
+}
+
+.felan-pricing-style-03 .felan-pricing .felan-pricing-footer .felan-button:hover {
+  background-color: #1f72f2;
+  color: #fff;
+}
+
+.felan-pricing-style-03 .felan-pricing .felan-pricing-body {
+  margin-top: 22px;
+}
+
+.felan-pricing .felan-pricing-ribbon ~ .felan-pricing-footer .felan-button {
+  background-color: #1f72f2;
+  color: #fff;
+}
+
+/*# sourceMappingURL=pricing.css.map */

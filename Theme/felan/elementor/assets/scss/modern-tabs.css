@@ -1,0 +1,42 @@
+.nav-modern-tabs {
+  list-style: none !important;
+  padding-left: 0 !important;
+  display: flex !important;
+  margin-bottom: 0 !important;
+  position: static !important;
+  width: 100% !important;
+}
+.nav-modern-tabs li + li {
+  margin-top: 0;
+  margin-left: 32px;
+}
+.nav-modern-tabs .nav-item {
+  padding: 0 !important;
+}
+.nav-modern-tabs .nav-item a {
+  color: var(--felan-color-text);
+  position: relative;
+  padding-bottom: 2px;
+  font-size: 18px !important;
+  font-weight: 500 !important;
+}
+.nav-modern-tabs .nav-item a:before {
+  content: "";
+  position: absolute;
+  height: 1px;
+  bottom: 0;
+  width: 0;
+  -webkit-transition: width 0.3s;
+  -moz-transition: width 0.3s;
+  -o-transition: width 0.3s;
+  transition: width 0.3s;
+  background-color: currentColor;
+}
+.nav-modern-tabs .nav-item a:hover, .nav-modern-tabs .nav-item.active a {
+  color: var(--felan-color-primary);
+}
+.nav-modern-tabs .nav-item a:hover:before, .nav-modern-tabs .nav-item.active a:before {
+  width: 100%;
+}
+
+/*# sourceMappingURL=modern-tabs.css.map */

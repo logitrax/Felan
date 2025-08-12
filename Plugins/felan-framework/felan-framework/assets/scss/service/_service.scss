@@ -1,0 +1,103 @@
+@import "archive/archive";
+@import "sidebar/sidebar";
+@import "single/single";
+@import "single/related";
+@import "submit";
+
+
+.felan-package-wrap.package-service {
+    p {
+        @include d-flex();
+        @include justify-content-between();
+        margin-bottom: 12px;
+    }
+    .felan-package-item {
+        padding: 24px;
+    }
+    .package-header {
+        @include d-flex();
+        @include align-items-center();
+        margin-bottom: 20px;
+        .title-my-service{
+            margin-bottom: 0;
+            a {
+                font-size: 18px;
+            }
+        }
+        .thumbnail{
+            width: 80px;
+            height: 80px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-right: 12px;
+        }
+    }
+    .title-my-service a {
+        @include d-flex();
+        font-size: 16px;
+        font-weight: 500;
+        color: $primary_color;
+        margin-bottom: 3px;
+    }
+    .package-content {
+        margin-bottom: 24px;
+        padding-bottom: 12px;
+        border-bottom: 1px solid $border-color;
+    }
+    .package-center {
+        h4 {
+            font-size: 16px;
+        }
+        .package-addons {
+            list-style: none;
+            padding-left: 0;
+            margin-top: 15px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid $border-color;
+            padding-bottom: 15px;
+        }
+        .addons-left {
+            @include d-flex();
+            @include flex-column();
+            padding-left: 5px;
+            .title {
+                font-weight: 500;
+            }
+            .content {
+                font-size: 14px;
+                color: #9ba2b0;
+                line-height: 1.2;
+            }
+        }
+        label {
+            @include d-inline-flex();
+            @include justify-content-between();
+            width: 100%;
+        }
+        li {
+            @include d-flex();
+        }
+        input.custom-checkbox {
+            margin-top: 6px;
+        }
+    }
+    .package-bottom {
+        .total {
+            font-weight: 500;
+            color: $primary_color;
+        }
+        .price {
+            font-weight: bold;
+        }
+        .delivery-time {
+            font-weight: 500;
+        }
+        .felan-button {
+            width: 100%;
+            text-align: center;
+        }
+    }
+    .felan-button {
+        margin-top: 12px;
+    }
+}

@@ -1,0 +1,67 @@
+.felan-categories-list {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  padding-top: 25px;
+}
+.felan-categories-list .list-cate-item {
+  margin-bottom: 20px;
+  -ms-flex: 0 0 50%;
+  flex: 0 0 50%;
+}
+.felan-categories-list ul.list-all-categories > li {
+  padding: 0 !important;
+}
+.felan-categories-list ul.list-all-categories > li > a {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+  align-items: center;
+  font-weight: 500 !important;
+  color: var(--felan-color-primary) !important;
+  font-size: 16px !important;
+}
+.felan-categories-list ul.list-all-categories > li > a:hover {
+  color: var(--felan-color-accent) !important;
+}
+.felan-categories-list ul.list-all-categories > li > a i {
+  font-size: 18px;
+  padding-left: 0 !important;
+  left: 0 !important;
+  transform: none !important;
+}
+.felan-categories-list ul.list-all-categories > li > a i,
+.felan-categories-list ul.list-all-categories > li > a svg {
+  margin-right: 12px;
+}
+.felan-categories-list ul.sub-all-categories {
+  padding-top: 15px !important;
+  padding-left: 30px !important;
+}
+.felan-categories-list ul.sub-all-categories ul.sub-all-categories {
+  padding: 0 !important;
+}
+.felan-categories-list ul.sub-all-categories li {
+  padding: 0 !important;
+}
+.felan-categories-list ul.sub-all-categories li + li {
+  margin-top: 8px;
+}
+.felan-categories-list ul.sub-all-categories a {
+  font-weight: 400 !important;
+  color: var(--felan-color-text) !important;
+}
+.felan-categories-list ul.sub-all-categories a:hover {
+  color: var(--felan-color-accent) !important;
+}
+.felan-categories-list ul {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 0;
+  display: block;
+  position: static !important;
+  width: 100% !important;
+}
+
+/*# sourceMappingURL=categories-list.css.map */

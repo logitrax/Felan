@@ -1,0 +1,267 @@
+.elementor-widget-felan-service-category .list-cate-item {
+  overflow: hidden;
+  height: 100%;
+}
+.elementor-widget-felan-service-category .cate-inner {
+  position: relative;
+  overflow: hidden;
+  height: 100%;
+}
+.elementor-widget-felan-service-category .cate-inner::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 2;
+}
+.elementor-widget-felan-service-category .cate-inner .link-box {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 2;
+}
+.elementor-widget-felan-service-category .cate-inner:hover .image-cate img {
+  -webkit-transform: scale(1.1);
+  -moz-transform: scale(1.1);
+  -o-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  transform: scale(1.1);
+}
+.elementor-widget-felan-service-category .image-cate img {
+  width: 100%;
+  object-fit: cover;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+  -webkit-transform: scale(1);
+  -moz-transform: scale(1);
+  -o-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+  transition: all 0.3s;
+}
+.elementor-widget-felan-service-category .cate-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  z-index: 2;
+}
+.elementor-widget-felan-service-category .cate-title {
+  font-size: 17px;
+  margin-bottom: 0;
+}
+.elementor-widget-felan-service-category .cate-title a {
+  color: #fff;
+  font-weight: 500;
+}
+.elementor-widget-felan-service-category .cate-title a:hover {
+  color: var(--felan-color-accent);
+}
+.elementor-widget-felan-service-category .cate-count {
+  font-size: 18px;
+  margin-bottom: 0;
+  color: #fff;
+  font-weight: 400;
+}
+
+.felan-layout-01 .image-cate img {
+  -webkit-transform: scale(1);
+  -moz-transform: scale(1);
+  -o-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+}
+.felan-layout-01 .list-cate-item:hover img {
+  -webkit-transform: scale(1.1);
+  -moz-transform: scale(1.1);
+  -o-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  transform: scale(1.1);
+}
+.felan-layout-01 .cate-content {
+  width: 100%;
+}
+
+.felan-layout-02 .cate-inner {
+  padding: 30px;
+  border-radius: 16px;
+  background-color: #f2f4f7;
+}
+.felan-layout-02 .cate-inner:before {
+  content: none;
+}
+.felan-layout-02 .cate-content {
+  position: static;
+  padding: 0;
+}
+.felan-layout-02 .cate-title a {
+  color: var(--felan-color-primary);
+}
+.felan-layout-02 .cate-count {
+  color: var(--felan-color-text);
+}
+.felan-layout-02 .image-cate {
+  margin-top: 40px;
+  display: inline-block;
+}
+
+.felan-layout-03 .cate-inner {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -ms-flex-align: center;
+  align-items: center;
+}
+.felan-layout-03 .image-cate {
+  margin-right: -30px;
+  margin-top: -30px;
+  margin-bottom: -30px;
+}
+
+.felan-layout-02 .cate-inner,
+.felan-layout-03 .cate-inner {
+  padding: 30px;
+  border-radius: 16px;
+  background-color: #f2f4f7;
+}
+.felan-layout-02 .cate-inner:before,
+.felan-layout-03 .cate-inner:before {
+  content: none;
+}
+.felan-layout-02 .cate-content,
+.felan-layout-03 .cate-content {
+  position: static;
+  padding: 0;
+}
+.felan-layout-02 .cate-title a,
+.felan-layout-03 .cate-title a {
+  color: var(--felan-color-primary);
+}
+.felan-layout-02 .cate-count,
+.felan-layout-03 .cate-count {
+  color: var(--felan-color-text);
+}
+.felan-layout-02 .image-cate img,
+.felan-layout-03 .image-cate img {
+  width: auto;
+}
+
+.felan-layout-04 .list-cate-item {
+  overflow: unset;
+}
+.felan-layout-04 .list-cate-item:hover img {
+  -webkit-transform: scale(1);
+  -moz-transform: scale(1);
+  -o-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+}
+.felan-layout-04 .cate-inner {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column-reverse;
+  flex-direction: column-reverse;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+  padding: 30px;
+  border-radius: 16px;
+  border: 1px solid var(--felan-color-border);
+}
+.felan-layout-04 .cate-inner:before {
+  content: none;
+}
+.felan-layout-04 .cate-inner:hover {
+  -webkit-box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.05);
+  -moz-box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.05);
+  box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.05);
+}
+.felan-layout-04 .cate-content {
+  margin-top: 20px;
+  position: static;
+  text-align: center;
+  padding: 0;
+}
+.felan-layout-04 .cate-title a {
+  color: var(--felan-color-primary);
+}
+.felan-layout-04 .cate-title a:hover {
+  color: var(--felan-color-accent);
+}
+.felan-layout-04 .cate-count {
+  color: var(--felan-color-text);
+}
+.felan-layout-04 .image-cate {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+.felan-layout-04 .image-cate a {
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  border-radius: 50%;
+  background-color: var(--felan-color-accent);
+  display: block;
+}
+.felan-layout-04 .image-cate img {
+  width: 24px;
+  height: 24px;
+}
+
+.felan-layout-05 .list-cate-item {
+  overflow: unset;
+}
+.felan-layout-05 .cate-inner {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column-reverse;
+  flex-direction: column-reverse;
+  overflow: unset;
+  border-radius: 16px;
+  background-color: #fff;
+  justify-content: flex-end;
+}
+.felan-layout-05 .cate-inner:before {
+  content: none;
+}
+.felan-layout-05 .cate-inner:hover {
+  -webkit-box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.05);
+  -moz-box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.05);
+  box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.05);
+}
+.felan-layout-05 .cate-inner:hover img {
+  -webkit-transform: scale(1) !important;
+  -moz-transform: scale(1) !important;
+  -o-transform: scale(1) !important;
+  -ms-transform: scale(1) !important;
+  transform: scale(1) !important;
+}
+.felan-layout-05 .cate-inner img {
+  border-radius: 16px 16px 0 0;
+}
+.felan-layout-05 .cate-content {
+  position: static;
+  padding: 20px 30px 25px 30px;
+}
+.felan-layout-05 .cate-title a {
+  color: var(--felan-color-primary);
+}
+.felan-layout-05 .cate-count {
+  color: var(--felan-color-text);
+}
+
+/*# sourceMappingURL=service-category.css.map */

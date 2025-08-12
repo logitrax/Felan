@@ -1,0 +1,22 @@
+.felan-jobs-item.layout-grid {
+  .jobs-logo-company {
+    @include d-flex();
+    @include justify-content-between();
+    margin-bottom: 8px;
+  }
+  .logo-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .info-jobs-cate {
+    margin-top: 24px;
+  }
+  .salary-wrapper {
+    font-weight: 400;
+    color: $text_color;
+  }
+  .jobs-archive-footer {
+    @include justify-content-end();
+  }
+}

@@ -1,0 +1,80 @@
+.my-freelancer {
+  .info-details {
+    i {
+      background-color: #3ab446;
+      color: #fff;
+      border-radius: 50%;
+      width: 15px;
+      height: 15px;
+      line-height: 15px;
+      text-align: center;
+      font-size: 8px;
+      position: relative;
+      top: -3px;
+      margin-left: 5px;
+    }
+    p {
+      color: $secondary_color;
+      font-weight: 500;
+    }
+  }
+  .cate-info {
+    font-weight: 500;
+    color: $secondary_color;
+    @include d-flex();
+    @include flex-wrap();
+  }
+  .action-search input {
+    width: 380px;
+  }
+  .table-dashboard tbody {
+    .list-action {
+      @include justify-content-end();
+    }
+    td:last-child {
+      padding-right: 35px;
+      width: 70px;
+    }
+  }
+  .image-freelancers {
+    min-width: 60px;
+    height: 60px;
+    background-color: #f9f9f9;
+    text-align: center;
+    line-height: 60px;
+    border-radius: 50%;
+    i {
+      font-size: 18px;
+      color: $secondary_color;
+    }
+  }
+  .felan-loading-effect {
+    display: none;
+  }
+}
+
+.felan-avatar-freelancer {
+  @include d-flex();
+  margin-bottom: 30px;
+  .freelancer-fields-thumbnail #felan_thumbnail_container {
+    height: 150px;
+  }
+  .freelancer-fields-thumbnail,
+  #felan_add_thumbnail {
+    width: 100%;
+  }
+}
+
+@media (max-width: 576px) {
+  .my-freelancer {
+    .action-search input {
+      width: 100%;
+    }
+  }
+  .felan-avatar-freelancer {
+    display: block;
+  }
+  .felan-avatar-freelancer .freelancer-fields-thumbnail {
+    margin-top: 30px;
+  }
+}

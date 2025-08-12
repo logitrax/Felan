@@ -1,0 +1,26 @@
+.project-related-details {
+  .felan-project-item {
+    + .felan-project-item {
+      margin-top: 16px;
+    }
+  }
+  .header-related {
+    @include d-flex();
+    @include justify-content-between();
+    margin-top: 25px;
+    margin-bottom: 30px;
+    h4 {
+      margin-bottom: 0;
+      line-height: 1;
+    }
+  }
+}
+
+@media (max-width: 1199px) and (min-width: 992px) {
+  .felan-project-item.layout-list {
+    display: block;
+    .project-thumbnail img {
+      border-radius: 16px 16px 0 0;
+    }
+  }
+}

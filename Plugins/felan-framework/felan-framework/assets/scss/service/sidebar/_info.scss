@@ -1,0 +1,87 @@
+.service-info-sidebar {
+  h4 {
+    margin-bottom: 3px;
+  }
+  .info-inner {
+    @include d-flex();
+    @include align-items-center();
+  }
+  .inner-right {
+    .fa-check {
+      color: $accent_color;
+      font-size: 14px;
+    }
+    .position {
+      margin-bottom: 0;
+    }
+    h4 a {
+      color: $primary_color;
+      &:hover {
+        color: $accent_color;
+      }
+    }
+  }
+  .info-content {
+    margin-top: 22px;
+    .info {
+      @include d-flex();
+      @include align-items-center();
+      gap: 8px;
+      i {
+        margin-right: 8px;
+        width: 18px;
+        font-size: 18px;
+        font-weight: 400;
+        color: $accent_color;
+        &.fa-eye {
+          margin-right: 0;
+          margin-left: 18px;
+        }
+      }
+      + .info {
+        margin-top: 10px;
+      }
+    }
+    .details-info {
+      margin-bottom: 0;
+    }
+  }
+  .felan-rating-warpper {
+    margin-bottom: 15px;
+  }
+  .services-center {
+    @include d-flex();
+    @include align-items-center();
+    margin-bottom: 16px;
+    h4 {
+      font-size: 16px;
+      margin-bottom: 3px;
+    }
+    .rating-count {
+      padding-left: 0;
+      &:before {
+        content: none;
+      }
+    }
+  }
+  .image-freelancers {
+    width: 50px;
+    height: 50px;
+    background-color: #f9f9f9;
+    text-align: center;
+    line-height: 50px;
+    border-radius: 50%;
+    margin-right: 16px;
+    i {
+      font-size: 18px;
+      color: $secondary_color;
+    }
+  }
+  .button-warpper {
+    margin-top: 24px;
+  }
+  .felan-button {
+    width: 100%;
+    text-align: center;
+  }
+}

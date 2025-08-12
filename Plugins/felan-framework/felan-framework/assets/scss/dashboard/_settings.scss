@@ -1,0 +1,43 @@
+.settings-dashboard {
+  max-width: 700px;
+  .felan-button {
+    margin-bottom: 24px;
+  }
+  .delete-account {
+    margin-top: 32px;
+    color: red;
+    font-weight: 500;
+    display: block;
+    color: red !important;
+  }
+}
+.felan-user-avatar {
+  @include d-flex();
+  @include align-items-center();
+  margin-bottom: 32px;
+  .des-avatar {
+    margin-top: 30px;
+    margin-bottom: 0;
+    font-size: 14px;
+    max-width: 340px;
+    color: $secondary_color;
+  }
+}
+
+#form-setting-deactive {
+  h5 {
+    font-size: 18px;
+    color: red;
+    text-align: center;
+  }
+  .setting-popup {
+    max-width: 270px;
+    padding: 20px;
+  }
+}
+
+@media (max-width: 375px) {
+  .felan-user-avatar {
+    display: block;
+  }
+}

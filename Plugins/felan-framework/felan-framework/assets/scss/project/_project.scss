@@ -1,0 +1,211 @@
+@import "archive/archive";
+@import "sidebar/sidebar";
+@import "single/single";
+@import "single/related";
+@import "submit";
+
+#my-project{
+    .project-thumbnail-inner{
+        @include d-flex();
+        @include align-items-center();
+        max-width: 400px;
+    }
+    .project-thumbnail{
+        @include flex(0 0 76px);
+        margin-right: 15px;
+        img{
+            height: 76px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+    }
+    td.price{
+        color: $primary_color;
+        font-weight: 500;
+        .budget-show{
+            color: #3AB446;
+        }
+    }
+    .project-number-applicant,
+	.project-proposal-number-applicant{
+        font-weight: 500;
+        margin-top: 20px;
+        display: block;
+        span:first-child{
+            color: $accent_color;
+        }
+        i{
+            font-size: 14px;
+            margin-left: 3px;
+        }
+    }
+    .image-applicants{
+        img{
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+        .info-user{
+            @include d-flex();
+            @include align-items-center();
+        }
+    }
+    .label-project{
+        color: $primary_color;
+        font-weight: 500;
+    }
+    .project-applicants{
+        .row{
+            margin-left: 0;
+            margin-right: 0;
+            + .row{
+                border-top: 1px solid #eee;
+                padding-top: 24px;
+                margin-top: 20px;
+            }
+            .col{
+                &:first-child{
+                    padding-left: 0;
+                }
+                &:last-child{
+                    min-width: 220px;
+                    text-align: right;
+                    padding-right: 0;
+                }
+            }
+        }
+    }
+    .project-list-applicant{
+        display: none;
+        background-color: #F9F9F9;
+        .project-applicants{
+            max-height: 300px;
+            overflow-y: auto;
+            overflow-x: hidden;
+        }
+        .felan-button{
+            font-size: 14px;
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+    }
+}
+
+.project-view-reason-popup .content-refund-reason{
+    padding-top: 15px;
+}
+
+.my-project{
+    .entry-title{
+        @include d-flex();
+        @include justify-content-between();
+    }
+}
+
+#form-popup-review,
+#form-popup-view{
+    .rate-title{
+        font-size: 18px;
+        font-weight: 500;
+    }
+    .rating-bars{
+        margin: 0;
+        display: block;
+    }
+    .inner-popup{
+        max-width: 650px;
+    }
+    .rate label{
+        color: #ddd;
+    }
+    textarea{
+        height: 170px;
+    }
+    .help{
+        margin-top: 5px;
+        color: #777;
+        margin-bottom: 12px;
+    }
+    form.reviewForm{
+        max-width: 440px;
+    }
+    .add-new-review .tip:after,
+    .rating-bars .tip:after{
+        color: #9BA2B0;
+    }
+    .rating-bars .tip{
+        background-color: transparent;
+        border: 1px solid #9BA2B0;
+        line-height: 18px;
+    }
+    .rating-bars{
+        @include d-flex();
+        @include align-items-center();
+    }
+    .rate{
+        margin-left: 20px;
+        label{
+            margin-bottom: 0;
+        }
+    }
+    .form-group{
+        margin-top: 12px;
+    }
+    .button-warpper .felan-button {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    .button-cancel,
+    .btn-message-complete{
+        color: $primary_color;
+        border-color: $primary_color;
+        &:hover{
+            background-color: $primary_color;
+            border-color: $primary_color;
+            color: #fff;
+        }
+    }
+    .btn-message-complete,
+    .btn-complete{
+        margin-right: auto;
+    }
+    .button-outline.btn-complete{
+        color: $primary_color;
+        border-color: $primary_color;
+        &:hover{
+            color: #fff;
+            background-color: $primary_color;
+        }
+    }
+    .button-cancel{
+        margin-right: 15px;
+    }
+    #btn-submit-review{
+        margin-left: 0 !important;
+        .fa-check{
+            margin-right: 0 !important;
+        }
+    }
+}
+
+#form-popup-view{
+    .rate label{
+        &:after{
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 2;
+        }
+    }
+    .comment{
+        margin-bottom: 0;
+        margin-top: 6px;
+    }
+    h5{
+        margin-bottom: 6px;
+    }
+}

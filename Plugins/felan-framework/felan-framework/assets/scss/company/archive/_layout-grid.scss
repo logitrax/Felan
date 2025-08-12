@@ -1,0 +1,23 @@
+.felan-company-item.layout-grid {
+  .company-header-inner {
+    display: flex;
+    align-items: center;
+  }
+  .company-inner {
+    margin-top: 16px;
+  }
+  .company-title {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+  .des-company {
+    margin-top: 16px;
+  }
+  .company-bottom {
+    @include d-flex();
+    margin-top: 24px;
+  }
+  .company-cate {
+    margin-top: 20px;
+  }
+}

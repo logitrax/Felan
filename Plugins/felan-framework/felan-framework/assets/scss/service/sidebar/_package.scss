@@ -1,0 +1,136 @@
+.service-package-sidebar {
+    padding: 30px;
+    .tab-single {
+        margin-bottom: 30px;
+    }
+    ul {
+        margin-bottom: 0;
+        padding-left: 0;
+        list-style: none;
+    }
+    .package-top {
+        border-radius: 16px 16px 0 0;
+        .price {
+            font-size: 24px;
+            font-weight: 500;
+            color: $primary_color;
+        }
+        .des {
+            color: $secondary_color;
+            margin-top: 6px;
+            margin-bottom: 0;
+        }
+    }
+    .compare-packages {
+        text-align: center;
+        margin-top: 20px;
+        display: block;
+    }
+    .content {
+        padding-top: 24px;
+        li {
+            @include d-flex();
+            @include align-items-center();
+            span:last-child {
+                margin-left: auto;
+                font-weight: 500;
+                color: $primary_color;
+            }
+            + li {
+                margin-top: 3px;
+            }
+            .check{
+                position: relative;
+                top: 5px;
+            }
+        }
+    }
+    .service-location {
+        span + span:before {
+            content: ", ";
+        }
+    }
+    .package-center {
+        .check i {
+            font-size: 24px;
+            color: #3ab446;
+        }
+    }
+    .package-bottom {
+        padding-top: 24px;
+        margin-top: 24px;
+        border-top: 1px solid $border-color;
+        h4 {
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+    }
+    .package-total {
+        padding-top: 24px;
+        margin-top: 18px;
+        border-top: 1px solid $border-color;
+        @include d-flex();
+        @include justify-content-between();
+        span {
+            font-size: 18px;
+            font-weight: 500;
+        }
+        .price {
+            color: $primary_color;
+            font-weight: 500;
+        }
+    }
+    .package-addons {
+        max-height: 175px;
+        overflow: auto;
+        li {
+            @include d-flex();
+            .input-control {
+                min-width: 15px;
+                margin-right: 8px !important;
+            }
+            + li {
+                margin-top: 16px;
+            }
+            label {
+                @include d-flex();
+                @include justify-content-between();
+                width: 100%;
+                margin-top: -5px;
+            }
+        }
+        .addons-left {
+            line-height: 1.5;
+        }
+        .title {
+            font-weight: 500;
+            color: $primary_color;
+            display: block;
+        }
+        .price {
+            font-weight: 500;
+            color: $primary_color;
+            margin-left: 15px;
+        }
+        .content {
+            font-size: 14px;
+            color: #999;
+        }
+    }
+    .felan-button {
+        margin-top: 24px;
+    }
+    .service_fee {
+        font-size: 14px;
+        font-weight: 500;
+        color: #3ab446;
+        margin-top: 16px;
+    }
+}
+
+.btn-submit-addons,
+.btn-wallet-submit{
+    .btn-loading {
+        display: none;
+    }
+}

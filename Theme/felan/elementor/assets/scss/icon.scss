@@ -1,0 +1,122 @@
+@import "settings/mixins";
+@import "settings/variables";
+
+.felan-icon-wrap {
+  line-height: 0;
+}
+
+.felan-icon-view {
+  display: inline-block;
+  font-size: 60px;
+}
+
+.felan-icon {
+  display: inline-block;
+  text-align: center;
+  font-size: 60px;
+  line-height: 1;
+  transition: all 0.3s;
+  color: #818a91;
+
+  .icon {
+    @extend %NormalTransition;
+  }
+
+  i,
+  svg {
+    width: 1em;
+    height: 1em;
+    position: relative;
+    display: block;
+  }
+
+  i {
+    background: inherit;
+
+    &:before {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+
+  svg.svg-defs-gradient {
+    position: absolute !important;
+    width: 0 !important;
+    height: 0 !important;
+  }
+}
+
+.svg-defs-gradient {
+  .stop-a,
+  .stop-b {
+    @extend %NormalTransition;
+  }
+}
+
+.felan-solid-icon {
+  svg {
+    *[stroke^="#"],
+    *[stroke^="url(#"] {
+      stroke: currentColor;
+    }
+
+    *[fill^="#"],
+    *[fill^="url(#"] {
+      fill: currentColor;
+    }
+  }
+}
+
+.felan-icon-view.second {
+  display: none !important;
+}
+
+.felan-view-stacked {
+  .felan-icon-view {
+    padding: 0.5em;
+    background-color: $primary_color;
+  }
+}
+
+.felan-view-bubble {
+  .felan-icon-wrap {
+    position: relative;
+    display: inline-block;
+    padding-bottom: 21px;
+  }
+
+  .felan-icon-view {
+    border-radius: 50%;
+    background-image: linear-gradient(
+      -225deg,
+      rgba(241, 212, 211, 0.17) 15%,
+      rgba(223, 169, 168, 0.17) 85%
+    );
+
+    &.first {
+      padding: 0.84em;
+    }
+
+    &.second {
+      display: inline-block !important;
+      padding: 0.28em;
+      position: relative;
+      bottom: 21px;
+      margin-left: 22px;
+    }
+
+    .icon {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      bottom: 0;
+    }
+  }
+}
+
+.felan-shape-circle {
+  .felan-icon-view {
+    border-radius: 50%;
+  }
+}

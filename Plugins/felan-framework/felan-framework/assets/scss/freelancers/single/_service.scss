@@ -1,0 +1,23 @@
+.freelancer-service-details {
+    .service-inner {
+        margin-top: -15px;
+        margin-bottom: -15px;
+    }
+    .service-item {
+        @include d-flex();
+        padding: 15px;
+    }
+    .service-item,
+    .felan-service-item {
+        width: 100%;
+    }
+}
+
+@media (min-width: 577px) {
+    .freelancer-service-details {
+        .service-item {
+            @include flex(0 0 100%);
+            max-width: 50%;
+        }
+    }
+}

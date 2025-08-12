@@ -1,0 +1,100 @@
+.felan-service-item.layout-list {
+  .service-header {
+    @include d-flex();
+    @include justify-content-between();
+  }
+  .service-top {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 12px;
+  }
+  .service-author {
+    margin-bottom: 0;
+  }
+  .service-thumbnail img {
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+  }
+  .service-content {
+    padding: 24px;
+    width: 100%;
+  }
+  .service-bottom {
+    margin-top: 46px;
+  }
+  .service-status-inner {
+    @include d-flex();
+    @include align-items-center();
+    .service-status {
+      width: 22px;
+      margin-top: -8px;
+      margin-right: 15px;
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .felan-service-item.layout-list {
+    @include d-flex();
+    .service-thumbnail {
+      @include flex(0 0 240px);
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .felan-service-item.layout-list {
+    .service-thumbnail {
+      img {
+        border-radius: 16px 16px 0 0;
+      }
+    }
+    .service-header-right {
+      display: block;
+    }
+    .service-title {
+      margin-top: 14px;
+    }
+    .service-status-inner {
+      position: absolute;
+      top: 24px;
+      right: 24px;
+      .service-status {
+        margin-top: 0;
+        width: auto;
+        margin-right: 12px;
+      }
+      .btn-add-to-wishlist {
+        width: 36px;
+        height: 36px;
+        background-color: #ffff;
+        border-radius: 50%;
+        text-align: center;
+        display: block;
+      }
+    }
+    .featured {
+      img {
+        position: relative;
+        top: 3px;
+      }
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .felan-service-item.layout-list {
+    .freelancer-bottom {
+      display: block;
+    }
+    .freelancer-salary {
+      margin-top: 15px;
+    }
+    .service-bottom {
+      margin-top: 24px;
+    }
+  }
+}

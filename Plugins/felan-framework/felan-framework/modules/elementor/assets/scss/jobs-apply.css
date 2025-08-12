@@ -1,0 +1,40 @@
+.felan-jobs-apply .jobs-archive-header {
+  -ms-flex-align: center;
+  align-items: center;
+}
+.felan-jobs-apply .felan-jobs-item {
+  padding: 32px;
+}
+.felan-jobs-apply .felan-jobs-item + .felan-jobs-item {
+  margin-top: 24px;
+}
+.felan-jobs-apply .felan-jobs-item .jobs-header-left {
+  display: block;
+}
+.felan-jobs-apply .felan-jobs-item .jobs-header-right {
+  height: auto;
+}
+.felan-jobs-apply .jobs-title {
+  margin-bottom: 12px;
+}
+.felan-jobs-apply .cate-wapprer {
+  color: var(--felan-color-secondary);
+}
+.felan-jobs-apply .felan-button-apply:after {
+  content: "\f054";
+  font-family: "Font Awesome 5 Pro";
+  font-size: 12px;
+  padding-left: 12px;
+}
+
+@media (max-width: 767px) {
+  .felan-jobs-apply .felan-jobs-item.layout-list .jobs-archive-header {
+    display: block;
+  }
+  .felan-jobs-apply .felan-jobs-item.layout-list .jobs-header-right {
+    position: static;
+    margin-top: 20px;
+  }
+}
+
+/*# sourceMappingURL=jobs-apply.css.map */

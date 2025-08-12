@@ -1,0 +1,108 @@
+#felan-form-single {
+  .bg-overlay {
+    opacity: 0;
+    visibility: hidden;
+  }
+  .page-breadcrumb {
+    display: none;
+  }
+  &.active {
+    .single-inner-popup {
+      opacity: 1;
+      @include transform(translateX(0));
+    }
+    .bg-overlay {
+      opacity: 1;
+      visibility: unset;
+    }
+  }
+  .single-inner-popup {
+    max-width: 1170px;
+    overflow: auto;
+    background-color: #fff;
+    margin-left: auto;
+    padding: 40px;
+    z-index: 9;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    position: fixed;
+    opacity: 0;
+    @include transform(translateX(100%));
+    @include transition(all 0.5s);
+  }
+  .content-header {
+    @include d-flex();
+    @include justify-content-between();
+    margin-bottom: 35px;
+  }
+  .btn-single-close i {
+    font-size: 22px;
+  }
+  .btn-new-tab i {
+    font-size: 18px;
+    margin-left: 5px;
+  }
+  .content-popup {
+    .single-jobs-area{
+      width: 100%;
+      max-width: 690px;
+    }
+  }
+  .content-popup {
+    .single-project-area,
+    .single-service-area{
+      width: 100%;
+      max-width: 690px !important;
+    }
+  }
+  .block-project-warrper,
+  .block-service-warrper {
+    .container {
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+}
+
+body.admin-bar #felan-form-single {
+  .content-header {
+    margin-top: 32px;
+  }
+}
+
+@media (min-width: 992px) {
+  #felan-form-single {
+    .content-popup {
+      @include d-flex();
+      .sidebar-popup {
+        padding-right: 15px;
+        width: 300px;
+      }
+      .single-freelancer-area,
+      .single-company-area {
+        padding-left: 15px;
+        width: calc(100% - 300px);
+      }
+      .sidebar-right-popup {
+        margin-left: 30px;
+        @include flex(0 0 370px);
+      }
+    }
+  }
+}
+
+@media (max-width: 991px) {
+  #felan-form-single {
+    .sidebar-popup {
+      margin-bottom: 65px;
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  #felan-form-single .single-inner-popup {
+    padding: 25px;
+  }
+}

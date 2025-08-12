@@ -1,0 +1,46 @@
+@import "mixins";
+@import "variables";
+
+.felan-jobs-apply {
+  .jobs-archive-header {
+    @include align-items-center();
+  }
+  .felan-jobs-item {
+    padding: 32px;
+    + .felan-jobs-item {
+      margin-top: 24px;
+    }
+    .jobs-header-left {
+      display: block;
+    }
+    .jobs-header-right {
+      height: auto;
+    }
+  }
+  .jobs-title {
+    margin-bottom: 12px;
+  }
+  .cate-wapprer {
+    color: $secondary_color;
+  }
+  .felan-button-apply:after {
+    content: "\f054";
+    font-family: "Font Awesome 5 Pro";
+    font-size: 12px;
+    padding-left: 12px;
+  }
+}
+
+@media (max-width: 767px) {
+  .felan-jobs-apply {
+    .felan-jobs-item.layout-list {
+      .jobs-archive-header {
+        display: block;
+      }
+      .jobs-header-right {
+        position: static;
+        margin-top: 20px;
+      }
+    }
+  }
+}

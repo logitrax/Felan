@@ -1,0 +1,244 @@
+@import "mixins";
+@import "variables";
+
+.elementor-widget-felan-service-category {
+  .list-cate-item {
+    overflow: hidden;
+    height: 100%;
+  }
+  .cate-inner {
+    position: relative;
+    overflow: hidden;
+    height: 100%;
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: rgba(0, 0, 0, 0.4);
+      z-index: 2;
+    }
+    .link-box {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 2;
+    }
+    &:hover {
+      .image-cate img {
+        @include transform(scale(1.1));
+      }
+    }
+  }
+  .image-cate {
+    img {
+      width: 100%;
+      object-fit: cover;
+      @include transition(all 0.3s);
+      @include transform(scale(1));
+      transition: all 0.3s;
+    }
+  }
+  .cate-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    z-index: 2;
+  }
+  .cate-title {
+    font-size: 17px;
+    margin-bottom: 0;
+    a {
+      color: #fff;
+      font-weight: 500;
+      &:hover {
+        color: $accent_color;
+      }
+    }
+  }
+  .cate-count {
+    font-size: 18px;
+    margin-bottom: 0;
+    color: #fff;
+    font-weight: 400;
+  }
+}
+
+.felan-layout-01 {
+  .image-cate {
+    img {
+      @include transform(scale(1));
+    }
+  }
+  .list-cate-item {
+    &:hover img {
+      @include transform(scale(1.1));
+    }
+  }
+  .cate-content {
+    width: 100%;
+  }
+}
+
+.felan-layout-02 {
+  .cate-inner {
+    padding: 30px;
+    border-radius: 16px;
+    background-color: #f2f4f7;
+    &:before {
+      content: none;
+    }
+  }
+  .cate-content {
+    position: static;
+    padding: 0;
+  }
+  .cate-title a {
+    color: $primary_color;
+  }
+  .cate-count {
+    color: $text_color;
+  }
+  .image-cate {
+    margin-top: 40px;
+    display: inline-block;
+  }
+}
+
+.felan-layout-03 {
+  .cate-inner {
+    @include d-flex();
+    @include justify-content-between();
+    @include align-items-center();
+  }
+  .image-cate {
+    margin-right: -30px;
+    margin-top: -30px;
+    margin-bottom: -30px;
+  }
+}
+
+.felan-layout-02,
+.felan-layout-03 {
+  .cate-inner {
+    padding: 30px;
+    border-radius: 16px;
+    background-color: #f2f4f7;
+    &:before {
+      content: none;
+    }
+  }
+  .cate-content {
+    position: static;
+    padding: 0;
+  }
+  .cate-title a {
+    color: $primary_color;
+  }
+  .cate-count {
+    color: $text_color;
+  }
+  .image-cate {
+    img {
+      width: auto;
+    }
+  }
+}
+
+.felan-layout-04 {
+  .list-cate-item {
+    overflow: unset;
+    &:hover img {
+      @include transform(scale(1));
+    }
+  }
+  .cate-inner {
+    @include d-flex();
+    @include flex-column-reverse();
+    @include transition(all 0.3s);
+    padding: 30px;
+    border-radius: 16px;
+    border: 1px solid $border-color;
+    &:before {
+      content: none;
+    }
+    &:hover {
+      @include box-shadow(0 5px 10px 0 rgba(0, 0, 0, 0.05));
+    }
+  }
+  .cate-content {
+    margin-top: 20px;
+    position: static;
+    text-align: center;
+    padding: 0;
+  }
+  .cate-title a {
+    color: $primary_color;
+    &:hover {
+      color: var(--felan-color-accent);
+    }
+  }
+  .cate-count {
+    color: $text_color;
+  }
+  .image-cate {
+    @include d-flex();
+    @include justify-content-center();
+    a {
+      width: 50px;
+      height: 50px;
+      line-height: 50px;
+      text-align: center;
+      border-radius: 50%;
+      background-color: var(--felan-color-accent);
+      display: block;
+    }
+    img {
+      width: 24px;
+      height: 24px;
+    }
+  }
+}
+
+.felan-layout-05 {
+  .list-cate-item {
+    overflow: unset;
+  }
+  .cate-inner {
+    @include d-flex();
+    @include flex-column-reverse();
+    overflow: unset;
+    border-radius: 16px;
+    background-color: #fff;
+    justify-content: flex-end;
+    &:before {
+      content: none;
+    }
+    &:hover {
+      @include box-shadow(0 5px 10px 0 rgba(0, 0, 0, 0.05));
+      img {
+        @include transform(scale(1) !important);
+      }
+    }
+    img {
+      border-radius: 16px 16px 0 0;
+    }
+  }
+  .cate-content {
+    position: static;
+    padding: 20px 30px 25px 30px;
+  }
+  .cate-title a {
+    color: $primary_color;
+  }
+  .cate-count {
+    color: $text_color;
+  }
+}

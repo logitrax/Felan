@@ -1,0 +1,21 @@
+.felan-company-item.layout-list {
+  padding-bottom: 20px;
+  .company-header-right {
+    @include d-flex();
+    @include align-items-center();
+  }
+}
+
+@media (max-width: 767px) {
+}
+
+@media (max-width: 576px) {
+  .felan-company-item.layout-list {
+    .company-bottom {
+      display: block;
+    }
+    .company-available {
+      margin-top: 15px;
+    }
+  }
+}

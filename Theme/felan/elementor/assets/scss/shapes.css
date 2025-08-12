@@ -1,0 +1,22 @@
+.felan-shape .shape {
+  color: var(--felan-color-primary);
+}
+.felan-shape svg {
+  height: auto;
+}
+
+.felan-shape-circle .shape {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: currentColor;
+}
+
+.felan-shape-border-circle .shape {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 3px solid currentColor;
+}
+
+/*# sourceMappingURL=shapes.css.map */

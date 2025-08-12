@@ -1,0 +1,1901 @@
+@import "settings/_mixins";
+@import "settings/_variables";
+@import "general/general";
+@import "package/package";
+@import "jobs/jobs";
+@import "company/company";
+@import "freelancers/freelancers";
+@import "service/service";
+@import "project/project";
+@import "loop/loop";
+
+//Fade In Right
+@-webkit-keyframes fadeInRight {
+    from {
+        opacity: 0;
+        -webkit-transform: translate3d(100%, 0, 0);
+        transform: translate3d(100%, 0, 0);
+    }
+
+    to {
+        opacity: 1;
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+@keyframes fadeInRight {
+    from {
+        opacity: 0;
+        -webkit-transform: translate3d(100%, 0, 0);
+        transform: translate3d(100%, 0, 0);
+    }
+
+    to {
+        opacity: 1;
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+.fadeInRight {
+    -webkit-animation-name: fadeInRight;
+    animation-name: fadeInRight;
+}
+
+@-webkit-keyframes fadeOutRight {
+    from {
+        opacity: 1;
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+    }
+
+    to {
+        opacity: 0;
+        -webkit-transform: translate3d(100%, 0, 0);
+        transform: translate3d(100%, 0, 0);
+    }
+}
+
+@keyframes fadeOutRight {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+        -webkit-transform: translate3d(100%, 0, 0);
+        transform: translate3d(100%, 0, 0);
+    }
+}
+
+.item-not-found {
+    margin-top: 15px;
+}
+
+.fadeOutRight {
+    -webkit-animation-name: fadeOutRight;
+    animation-name: fadeOutRight;
+}
+
+//skeleton loading
+.skeleton-loading {
+    .jobs-archive-header,
+    .jobs-archive-center,
+    .jobs-archive-footer,
+    .jobs-title,
+    .jobs-des,
+    .days,
+    .company-top,
+    .des-company,
+    .company-header,
+    .company-bottom,
+    .company-cate,
+    .company-inner,
+    .company-thumbnail,
+    .freelancer-top,
+    .des-freelancer,
+    .freelancer-header,
+    .freelancer-bottom,
+    .freelancer-salary,
+    .freelancer-center,
+    .service-thumbnail,
+    .service-content,
+    .project-content,
+    .service-header,
+    .price-inner,
+    .services-center,
+    .service-bottom,
+    .project-thumbnail,
+    .project-header,
+    .project-center,
+    .project-bottom,
+    .jobs-thumbnail-details,
+    .block-archive-inner > *,
+    .preview-tabs .tab-nav li,
+    .company-overview > *,
+    .company-jobs > * {
+        position: relative;
+        overflow: hidden;
+        background-color: #dddbdd;
+        &:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background-color: #dddbdd;
+            z-index: 3;
+        }
+        &::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            transform: translateX(-100%);
+            z-index: 3;
+            background-image: linear-gradient(
+                            90deg,
+                            rgba(#fff, 0) 0,
+                            rgba(#fff, 0.2) 20%,
+                            rgba(#fff, 0.5) 60%,
+                            rgba(#fff, 0)
+            );
+            animation: shimmer 3s infinite;
+        }
+    }
+}
+
+@keyframes shimmer {
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+body.single-jobs {
+    .main-content {
+        padding-top: 0 !important;
+    }
+    .site-content,
+    .site-header {
+        position: relative;
+    }
+    .info-left {
+        .jobs-company-sidebar .felan-send-mess {
+            color: #fff;
+            background-color: $accent_color;
+            border-color: $accent_color;
+            width: 100%;
+        }
+        .jobs-company-sidebar .logged-out {
+            width: 100%;
+        }
+        #tab-sidebar-overview {
+            .info i {
+                color: $accent_color;
+            }
+        }
+        .jobs-company-sidebar .name {
+            margin-left: 0;
+        }
+        .felan-rating-warpper {
+            text-align: left;
+        }
+    }
+}
+
+body.single-service {
+    .felan_breadcrumb li:last-child {
+        display: none;
+    }
+}
+
+body.single-company,
+body.single-freelancer {
+    .site-layout.has-sidebar {
+        @include flex-row-reverse();
+    }
+}
+
+body.single-project {
+    .main-content {
+        padding-top: 30px;
+    }
+    .site-layout.has-sidebar #primary {
+        max-width: calc(100% - 370px);
+    }
+    .site-layout.has-sidebar aside#secondary {
+        @include flex(0 0 370px);
+        max-width: 370px;
+    }
+}
+
+body.single-service .info-left .service-info-warpper,
+body.single-project .info-left .project-info-warpper,
+body.single-jobs .info-left .project-info-warpper {
+    position: sticky;
+    top: 30px;
+    z-index: 2;
+}
+
+body.admin-bar.single-jobs .info-left .jobs-info-warpper,
+body.admin-bar.single-service .info-left .service-info-warpper,
+body.admin-bar.single-project .info-left .project-info-warpper {
+    position: sticky;
+    top: 60px;
+    z-index: 2;
+}
+
+body.single-project .info-left {
+    margin-left: 0;
+    margin-right: 0;
+    aside#secondary {
+        padding-right: 0;
+    }
+}
+
+#geocoder {
+    top: 36px !important;
+}
+
+body.felan-ltw {
+    overflow: hidden !important;
+}
+
+@media (max-width: 1199px) {
+    body.single-service,
+    body.single-project {
+        .site-layout.info-left {
+            #primary {
+                padding-left: 0;
+            }
+        }
+    }
+}
+
+@media (max-width: 991px) {
+    body.single-service {
+        .site-layout.info-left {
+            .service-info-sidebar {
+                margin-bottom: 30px;
+            }
+        }
+    }
+    body.single-project {
+        .site-layout.info-left {
+            .project-info-sidebar {
+                margin-bottom: 30px;
+            }
+        }
+    }
+}
+
+@media (min-width: 768px) {
+    body.single-jobs,
+    body.single-company,
+    body.single-freelancer {
+        .elementor-lightbox {
+            display: none !important;
+        }
+    }
+}
+
+@media (max-width: 576px) {
+    body.single-jobs,
+    body.single-company,
+    body.single-freelancer {
+        .felan_breadcrumb {
+            display: none;
+        }
+        .main-content {
+            padding-top: 30px;
+        }
+    }
+}
+
+a.label {
+    @include transition(all 0.3s);
+    &:hover {
+        background-image: linear-gradient(rgba(0, 0, 0, 0.05) 0 0);
+    }
+}
+
+.swiper-container {
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.felan-link-bottom {
+    position: relative;
+    &:after {
+        content: "";
+        position: absolute;
+        right: 0;
+        left: 0;
+        height: 1px;
+        bottom: -3px;
+        background-color: currentColor;
+        width: 0;
+        @include transition(all 0.3s);
+    }
+    &:hover:after {
+        width: 100%;
+    }
+}
+
+.felan-email-html {
+    background-color: #f2f2f2;
+    padding: 10px;
+    border-radius: 5px;
+    margin: 10px;
+    .text {
+        color: #666;
+        font-size: 16px;
+        margin-bottom: 10px;
+    }
+}
+
+.additional-warpper {
+    .entry-thumbnail {
+        position: relative;
+    }
+    .view-video {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        @include transform(translate(-50%, -50%));
+        i {
+            color: red;
+            font-size: 60px;
+        }
+    }
+}
+
+//rtl
+.elementor-section.rtl {
+    .jobs-archive-header,
+    .jobs-header-left,
+    .company-header .elementor-section.rtl,
+    .company-bottom {
+        @include flex-row-reverse();
+    }
+    .company-inner {
+        @include justify-content-end();
+    }
+    .company-img,
+    .layout-list .jobs-footer-left,
+    .layout-list .jobs-header-left,
+    .felan-jobs-item .logo-company {
+        margin-right: 0;
+        margin-left: 16px;
+    }
+    .jobs-footer-left,
+    .jobs-footer-right,
+    .jobs-header-left,
+    .felan-company-item,
+    .testimonial-item .content,
+    .cite {
+        text-align: right;
+    }
+    .felan-testimonial-style-03 .info .testimonial-logo {
+        left: 0;
+        right: auto;
+    }
+    .felan-testimonial-style-03 .image {
+        margin-left: 20px !important;
+        margin-right: 0 !important;
+    }
+    .felan-blog .top-blog .post-categories {
+        padding-right: 0;
+    }
+}
+
+body.single-freelancer .site-layout.has-sidebar #primary {
+    max-width: calc(100% - 330px);
+}
+
+.custom-modern-tabs-01 .nav-modern-tabs {
+    border-bottom: none;
+    margin-bottom: 30px;
+}
+
+.e-font-icon-svg {
+    width: 0.8em;
+}
+
+.site-menu.desktop-menu.main-menu .sub-menu li i {
+    top: 0;
+    transform: rotate(-90deg);
+    position: relative;
+    left: 5px;
+    padding-left: 2px;
+}
+
+body.home .site-header {
+    border-bottom: none;
+}
+
+#tab-sidebar-overview .felan-send-mess,
+.project-info-warpper .button-warpper > a {
+    display: none;
+}
+
+#tab-sidebar-overview .button-warpper a,
+.project-info-warpper .button-warpper .felan-button {
+    flex: 0 0 100%;
+    background-color: transparent;
+    color: var(--felan-color-accent);
+}
+
+.project-info-warpper .button-warpper {
+    display: block;
+}
+
+#tab-sidebar-overview .button-warpper a:hover,
+.project-info-warpper .button-warpper .felan-button:hover {
+    background-color: var(--felan-color-accent);
+    color: #fff;
+}
+
+.felan-border-primary .felan-button.button-border-bottom::after,
+.felan-border-primary .felan-button.button-border-bottom::before,
+.felan-border-primary .felan-button.button-link::after {
+    background-color: var(--felan-color-primary);
+}
+
+.felan-package-layout-01 .felan-package-wrap,
+.felan-package-layout-02 .felan-package-wrap {
+    margin-top: 0;
+}
+
+div.felan-view-demo .felan-image-inner {
+    padding: 0;
+    background-color: transparent;
+    border-radius: 12px;
+}
+
+div.felan-view-demo .image {
+    box-shadow: none;
+    border-radius: 8px;
+    border: 1px solid #eee;
+}
+
+.archive-layout input.archive-search-location {
+    height: 58px;
+}
+
+.felan-categories-list ul.sub-all-categories {
+    margin-top: 0;
+}
+
+.felan-freelancers.layout-center .felan-freelancers-item {
+    padding: 20px !important;
+}
+
+.nav-dashboard-wapper.close .nav-dashboard:before {
+    width: calc(100% + 32px);
+}
+
+.nav-dashboard-wapper.close .list-nav-dashboard .nav-item a:hover img,
+.nav-dashboard-wapper.close .list-nav-dashboard .nav-item.active img {
+    filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(0%) hue-rotate(294deg) brightness(104%) contrast(104%);
+}
+
+ul.nav-modern-tabs .nav-item a {
+    font-weight: 500 !important;
+}
+
+.area-menu {
+    font-size: 16px;
+}
+
+.site-menu.desktop-menu.main-menu .sub-menu {
+    font-size: 16px;
+}
+
+.site-menu.desktop-menu .menu li .children,
+.site-menu.desktop-menu .menu li .sub-menu {
+    margin-top: 0;
+}
+
+body.single-freelancer .site-layout.has-sidebar #primary {
+    max-width: calc(100% - 330px);
+}
+
+.custom-modern-tabs-01 .nav-modern-tabs {
+    border-bottom: none;
+    margin-bottom: 30px;
+}
+
+.account .user-control {
+    min-width: 240px;
+}
+
+.elementor-widget-felan-service-category .cate-title {
+    font-size: 17px;
+}
+
+.form-jobs-top-filter .felan-form-location .icon-location {
+    position: absolute;
+    top: 16px;
+    left: 15px;
+}
+
+.site-menu.mobile-menu .user-name {
+    color: #111;
+    display: flex;
+    flex-direction: column;
+}
+
+.site-menu.mobile-menu .avatar {
+    display: flex;
+}
+
+body.single-freelancer #wrapper {
+    overflow-x: hidden;
+}
+
+.felan-search-horizontal .form-group .icon-location svg {
+    position: static;
+    transform: none;
+}
+
+.felan-search-horizontal .form-group .icon-location {
+    top: 22px;
+}
+
+.post-type-archive-jobs .felan-form-location .icon-location svg {
+    position: static;
+}
+
+div.site-menu.mobile-menu .account .user-show a {
+    color: #111;
+}
+
+.felan-categories-list ul.list-all-categories li a {
+    display: inline-flex !important;
+}
+
+body.single-jobs .form-popup-apply .apply-popup {
+    max-width: 450px !important;
+}
+
+div.site-menu.mobile-menu .top-mb-menu .account a {
+    color: #111;
+}
+
+div.site-menu.mobile-menu .list-nav-dashboard .nav-item a {
+    color: #fff;
+}
+
+body.single-project .felan_breadcrumb li.current,
+body.single-jobs .felan_breadcrumb li.current,
+body.single-company .felan_breadcrumb li.current,
+body.single-service .felan_breadcrumb li.current,
+body.single-freelancer .felan_breadcrumb li.current {
+    display: none;
+}
+
+.package-service .package-header .title-my-service a.service-change {
+    font-size: 12px;
+    margin-top: 0;
+    position: relative;
+    top: -5px;
+    font-weight: 600;
+}
+
+.felan-form-location .icon-location {
+    top: 16px;
+}
+
+.felan-form-location .radius {
+    z-index: 2;
+}
+
+@media (max-width: 576px) {
+    body.single-freelancer .main-content {
+        padding-top: 0;
+    }
+}
+
+@media only screen and (max-width: 991px) {
+    body.single-freelancer .main-content .site-layout.has-sidebar {
+        display: flex;
+        flex-direction: column-reverse;
+    }
+    body.single-freelancer .main-content .freelancer-sidebar {
+        margin-bottom: 50px;
+    }
+    body.single-project {
+        .site-layout.has-sidebar #primary {
+            max-width: 100%;
+        }
+        .site-layout.has-sidebar aside#secondary {
+            @include flex(100%);
+            max-width: 100%;
+        }
+    }
+}
+
+.freelancer-sidebar .add-follow-freelancer {
+    position: absolute !important;
+    top: 15px;
+    right: 15px;
+    padding: 0;
+    border: 0;
+    margin-top: 0;
+}
+
+.freelancer-sidebar .add-follow-freelancer:hover {
+    background-color: transparent;
+    color: #111;
+}
+
+.freelancer-sidebar .add-follow-freelancer .icon-plus {
+    font-size: 20px;
+}
+
+.freelancer-sidebar .add-follow-freelancer .text-icon {
+    display: none;
+}
+
+.freelancer-sidebar {
+    position: relative;
+}
+
+.freelancer-sidebar .info-bottom-btn {
+    margin-top: 12px;
+    gap: 10px;
+    display: block;
+}
+
+.freelancer-sidebar .info-bottom-btn > .felan-add-to-follow-freelancer {
+    flex: 0 0 47%;
+    text-align: center;
+}
+
+.freelancer-sidebar .info-bottom-btn .felan-button i,
+.freelancer-sidebar .info-bottom-btn .felan-add-to-follow-freelancer i {
+    margin-right: 5px;
+}
+
+.form-group.location.loading:before {
+    top: 0;
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.1);
+    z-index: 2;
+}
+
+.canvas-search .btn-close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    z-index: 9;
+    font-size: 22px;
+    color: #fff;
+}
+
+div.site-menu.mobile-menu .nav-dashboard .nav-item a {
+    color: #fff;
+}
+
+div.site-menu.mobile-menu .felan-nav-dashboard {
+    margin-top: 15px;
+}
+
+.jobs-company-sidebar .company-sidebar-center .action-inner .account {
+    position: static;
+}
+
+.jobs-company-sidebar
+.company-sidebar-center
+.action-inner
+.add-follow-company {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    .icon-plus {
+        display: flex;
+    }
+}
+
+.jobs-company-sidebar .company-sidebar-center .action-inner .account {
+    width: auto;
+}
+
+.jobs-company-sidebar .company-sidebar-center .action-inner .btn-webs {
+    margin-left: 0;
+}
+
+#freelancer-service-order {
+    .service-header {
+        .cate {
+            font-weight: 500;
+            color: $primary_color;
+            &:hover {
+                color: $accent_color;
+            }
+        }
+    }
+}
+
+#service-order,
+#freelancer-service-order {
+    tr > td {
+        max-width: 400px;
+    }
+    .author {
+        color: $accent_color;
+    }
+}
+
+.count-sales {
+    margin-right: 15px;
+    margin-bottom: 5px;
+}
+
+a.review-count:hover {
+    color: $accent_color !important;
+}
+
+.felan-company-item .company-location {
+    display: flex;
+    align-items: center;
+}
+
+.felan-service-order-detail {
+    .order-content,
+    .order-sidebar {
+        padding: 30px;
+        background-color: #fff;
+        border-radius: 8px;
+        border: 1px solid $border-color;
+    }
+    .order-sidebar {
+        padding: 24px;
+    }
+    .content {
+        max-width: 100% !important;
+    }
+    .order-top {
+        padding-bottom: 24px;
+        margin-bottom: 24px;
+        border-bottom: 1px solid $border-color;
+        .status span {
+            margin-right: 5px;
+        }
+        .info {
+            @include d-flex();
+            padding-top: 24px;
+            margin-bottom: 24px;
+        }
+        img {
+            width: 80px;
+            height: 80px;
+            border-radius: 8px;
+            object-fit: cover;
+            margin-right: 12px;
+        }
+        .featured{
+            top: -3px;
+            img{
+                width: auto;
+                height: auto;
+            }
+        }
+        .title-my-service {
+            font-size: 24px;
+            display: -webkit-box;
+            -webkit-line-clamp: 1;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            word-wrap: break-word;
+            margin-bottom: 5px;
+        }
+        .author {
+            color: $accent_color;
+        }
+        .order-date .value {
+            color: $primary_color;
+            font-weight: 500;
+            padding-left: 3px;
+        }
+        .order-date {
+            @include d-flex();
+            @include flex-wrap();
+            @include justify-content-between();
+        }
+    }
+    .order-center-item {
+        padding-bottom: 24px;
+        margin-bottom: 24px;
+        border-bottom: 1px solid $border-color;
+        h3 {
+            font-size: 18px;
+            margin-bottom: 15px;
+        }
+        .fee {
+            color: $primary_color;
+            font-weight: 500;
+            margin-bottom: 3px;
+        }
+        .price-default {
+            color: $primary_color;
+            font-weight: 500;
+            margin-bottom: 8px;
+        }
+        .order-des {
+            color: #777;
+            margin-bottom: 8px;
+        }
+        .delivery-time .time {
+            color: $primary_color;
+            font-weight: 500;
+        }
+        .content {
+            margin: 0;
+            padding-left: 0;
+            list-style: none;
+            @include d-flex();
+            @include flex-wrap();
+            padding-top: 20px;
+            li {
+                @include d-flex();
+                @include flex(0 0 33.33%);
+                max-width: 33.33%;
+            }
+            .check {
+                margin-right: 5px;
+            }
+        }
+    }
+    .order-addons {
+        .title {
+            color: $primary_color;
+            font-weight: 500;
+            margin-bottom: 6px;
+        }
+        .delivery-time {
+            color: #777;
+        }
+    }
+    .order-addons-inner {
+        .content-addons {
+            margin-bottom: 10px;
+        }
+    }
+    .canceled-inner {
+        background-color: rgba(237, 0, 6, 0.05);
+        padding: 20px;
+        border-radius: 16px;
+        margin-top: 20px;
+        h4 {
+            font-size: 16px;
+            display: flex;
+            align-items: center;
+            svg {
+                margin-right: 8px;
+            }
+        }
+        .felan-button {
+            margin-top: 8px;
+        }
+    }
+    p {
+        margin-bottom: 0;
+    }
+    .order-bottom {
+        &.order-canceled {
+            @include d-flex();
+            @include align-items-center();
+        }
+        .total-budget {
+            color: $primary_color;
+            font-size: 24px;
+            font-weight: 500;
+        }
+        .order-status {
+            margin-top: 24px;
+            @include d-flex();
+            @include align-items-center();
+        }
+        .felan-button {
+            &.btn-action-review {
+                background-color: #3AB446;
+                border-color: #3AB446;
+                margin-right: 10px;
+            }
+            &.btn-canceled,
+            &.button-outline.btn-add-to-message {
+                border-color: $border-color;
+                color: $primary_color;
+                &:hover {
+                    color: #fff;
+                    background-color: $primary_color;
+                    border-color: $primary_color;
+                }
+            }
+            &.btn-order-refund {
+                margin-left: auto;
+            }
+        }
+    }
+    .order-history,
+    .disputes-history {
+        .avatar {
+            width: 48px;
+            height: 48px;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+        .info-history {
+            @include d-flex();
+            @include align-items-center();
+        }
+        .history-item {
+            + .history-item {
+                padding-top: 24px;
+                margin-top: 24px;
+                border-top: 1px solid $border-color;
+            }
+            .content {
+                padding-top: 15px;
+            }
+        }
+        .download {
+            @include d-flex();
+            @include align-items-center();
+            padding-top: 15px;
+            .title {
+                padding-left: 5px;
+                padding-right: 5px;
+            }
+        }
+    }
+    .order-history + .order-chat {
+
+        padding-top: 24px;
+        margin-top: 24px;
+        border-top: 1px solid $border-color;
+    }
+    .order-sidebar {
+        max-height: 720px;
+        overflow-y: auto;
+        overflow-x: hidden;
+        h4 {
+            font-size: 24px;
+            margin-bottom: 12px;
+        }
+        .image-freelancers {
+            width: 56px;
+            height: 56px;
+            object-fit: cover;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+        .info {
+            h5 {
+                font-size: 18px;
+                margin-bottom: 0;
+            }
+        }
+        .info-freelancer {
+            @include d-flex();
+            @include align-items-center();
+            position: relative;
+            padding-bottom: 25px;
+            margin-bottom: 25px;
+            &:before {
+                content: '';
+                position: absolute;
+                bottom: 0;
+                height: 1px;
+                background-color: $border-color;
+                display: block;
+                left: -30px;
+                right: -30px;
+            }
+        }
+        .freelancer-review {
+            @include d-flex();
+            @include align-items-center();
+        }
+        .tab-list {
+            margin-bottom: 15px;
+        }
+        .tab-dashboard {
+            .tab-item {
+                &.active {
+                    &:before {
+                        content: none;
+                    }
+                    a {
+                        color: $primary_color;
+                    }
+                }
+                &:hover:before {
+                    width: 0;
+                }
+                + .tab-item {
+                    margin-left: 25px;
+                }
+                a {
+                    color: #777;
+                }
+            }
+        }
+    }
+}
+
+.service-header .author {
+    color: $accent_color;
+}
+
+.service-meta {
+    .count-sales {
+        margin-right: 0;
+        margin-bottom: 0;
+    }
+    .service-view {
+        @include d-flex();
+        @include align-items-center();
+        svg {
+            width: 20px;
+        }
+        .count {
+            margin-left: 5px;
+        }
+    }
+}
+
+body.post-type-archive-jobs #felan-form-single.active .bg-overlay {
+    bottom: -999%;
+}
+
+body.post-type-archive-jobs .content-popup #felan_form_apply_jobs {
+    max-width: 500px;
+    left: 20%;
+}
+
+.block-from#project-submit-additional {
+    margin-top: 12px;
+}
+
+.felan-disputes,
+.felan-project-disputes{
+    .order-top {
+        .order-date {
+            @include justify-content-start();
+        }
+        .order-id {
+            padding-right: 30px;
+        }
+    }
+    .order-sidebar {
+        .info-freelancer {
+            padding-bottom: 0;
+            margin-bottom: 0;
+            &:before {
+                content: none;
+            }
+        }
+        .content-request {
+            h5 {
+                font-size: 18px;
+                margin-top: 20px;
+            }
+            p {
+                margin-bottom: 24px;
+            }
+        }
+        .reply {
+            h5 {
+                font-size: 18px;
+                margin-bottom: 15px;
+            }
+            .felan-button {
+                margin-top: 10px;
+            }
+        }
+    }
+    .info-freelancer {
+        img {
+            width: 48px !important;
+            height: 48px !important;
+        }
+    }
+    .disputes-history {
+        .history-item {
+            + .history-item {
+                margin-top: 0;
+                border: 0;
+            }
+            position: relative;
+            padding-top: 24px;
+            padding-bottom: 24px;
+            &:before {
+                content: '';
+                height: 1px;
+                display: block;
+                background-color: $border-color;
+                left: -24px;
+                position: absolute;
+                right: -24px;
+                top: 0;
+            }
+            &.receiver:after {
+                content: '';
+                background: #3AB446;
+                position: absolute;
+                display: block;
+                width: 2px;
+                bottom: 0;
+                top: 0;
+                left: -24px;
+            }
+        }
+    }
+    #felan-disputes-message {
+        position: relative;
+        padding-top: 24px;
+        &:before {
+            content: '';
+            height: 1px;
+            display: block;
+            background-color: $border-color;
+            left: -24px;
+            position: absolute;
+            right: -24px;
+            top: 0;
+        }
+    }
+}
+
+.felan-team-member .social-networks svg.e-fab-facebook-f{
+    width: .5em;
+}
+
+span.not-disputes {
+    padding: 24px;
+    display: block;
+}
+
+.service-head-details .felan-rating-warpper {
+    margin-left: 15px;
+}
+
+.service-info-sidebar .review-inner {
+    @include d-flex();
+    @include align-items-center();
+}
+
+.service-info-sidebar .review-inner .felan-rating-warpper {
+    margin-bottom: 0;
+    margin-left: 12px;
+    &:before {
+        content: '';
+        width: 6px;
+        height: 6px;
+        background-color: #ddd;
+        display: inline-block;
+        border-radius: 50%;
+        margin-right: 5px;
+    }
+}
+
+.action-review .felan-rating-warpper {
+    display: inline-block;
+}
+
+.felan-upload-cv {
+    .info-image-type {
+        margin-top: 5px;
+        margin-bottom: 0;
+        text-align: center;
+    }
+}
+
+.order-chat {
+    .cv-icon-delete {
+        position: absolute;
+        right: 10px;
+        top: 20px;
+        z-index: 99999999;
+    }
+    #felan_select_cv {
+        height: 60px;
+        width: 100%;
+        background-color: rgba(255, 196, 2, 0.2);
+        margin-top: 15px;
+        border-radius: 8px;
+        border: 1px dashed $border-color;
+        span {
+            padding-left: 5px;
+        }
+    }
+    .message_error {
+        margin-top: 20px;
+        margin-bottom: 10px;
+        text-align: center;
+        color: red;
+        &.true {
+            color: green;
+        }
+    }
+}
+
+.felan-fields-custom_upload{
+    .cv-icon-delete{
+        position: relative;
+        z-index: 999999999;
+    }
+    .file-type{
+        position: relative;
+        margin-top: -15px;
+    }
+}
+
+.company-sidebar-info > .title-wapper {
+    display: flex;
+    align-items: center;
+}
+
+.freelancer-withdraw-popup .withdrawals-fee {
+    color: green;
+}
+
+.service-header .info-service-inner {
+    @include d-flex();
+    @include align-items-center();
+    .felan-rating-warpper,
+    .count-sales {
+        margin-right: 15px;
+        margin-bottom: 0;
+    }
+    .service-view {
+        @include d-flex();
+        @include align-items-center();
+        .count {
+            margin-left: 5px;
+        }
+        svg {
+            width: 20px;
+        }
+    }
+}
+
+.felan-project-order-detail {
+    .order-content {
+        padding: 30px;
+        background-color: #fff;
+        border-radius: 16px;
+        border: 1px solid $border-color;
+    }
+    .order-top {
+        @include d-flex();
+        @include justify-content-between();
+        margin-bottom: 24px;
+        padding-bottom: 24px;
+        border-bottom: 1px solid $border-color;
+        .info{
+            @include d-flex();
+            @include align-items-center();
+            .title-my-project{
+                font-size: 18px;
+                margin-bottom: 3px;
+                a{
+                    color: $primary_color;
+                    &:hover{
+                        color: $accent_color;
+                    }
+                }
+            }
+            p{
+                margin-bottom: 0;
+                .author{
+                    color: $accent_color;
+                }
+            }
+        }
+        img {
+            width: 76px;
+            height: 76px;
+            border-radius: 8px;
+            object-fit: cover;
+            margin-right: 15px;
+        }
+    }
+    .order-center{
+        @include d-flex();
+        @include justify-content-between();
+        .avatar-inner{
+            @include d-flex();
+            @include align-items-center();
+        }
+        .image-applicants img{
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+        .info-details{
+            margin-left: 10px;
+            h3{
+                font-size: 18px;
+                margin-bottom: 4px;
+            }
+        }
+        .btn-order-refund{
+            margin-top: 20px;
+        }
+        .budget-inner{
+            padding-left: 0;
+            list-style: none;
+            margin-bottom: 0;
+            li.list-item-budget{
+                @include d-flex();
+                @include align-items-center();
+                @include justify-content-between();
+                &.has-border{
+                    margin-bottom: 5px;
+                    padding-bottom: 5px;
+                    border-bottom: 1px solid $border-color;
+                }
+            }
+            .price{
+                color: $primary_color;
+                font-weight: 500;
+            }
+        }
+        .btn-approve-proposal{
+            margin-top: 30px;
+        }
+    }
+    .order-center-right{
+        .price{
+            font-size: 20px;
+            font-weight: 500;
+            color: $primary_color;
+            margin-bottom: 5px;
+        }
+        p{
+            margin-bottom: 0;
+        }
+    }
+    .order-center-bot{
+        .message-inner{
+            margin-bottom: 15px;
+            h4{
+                font-size: 20px;
+                margin-top: 15px;
+            }
+        }
+        .order-status{
+            @include d-flex();
+            margin-top: 24px;
+            .order-canceled {
+                @include d-flex();
+                @include align-items-center();
+            }
+            .felan-button {
+                &.btn-action-review {
+                    background-color: #3AB446;
+                    border-color: #3AB446;
+                    margin-right: 10px;
+                }
+                &.btn-canceled,
+                &.button-outline.btn-add-to-message {
+                    border-color: $border-color;
+                    color: $primary_color;
+                    &:hover {
+                        color: #fff;
+                        background-color: $primary_color;
+                        border-color: $primary_color;
+                    }
+                }
+            }
+        }
+    }
+    .order-bottom{
+        .order-history,
+        .order-chat{
+            padding-top: 24px;
+            margin-top: 24px;
+            border-top: 1px solid $border-color;
+        }
+        .order-history .history-item:last-child{
+            padding-bottom: 0;
+            margin-bottom: 0;
+            border-bottom: 0;
+        }
+        h4{
+            font-size: 24px;
+        }
+    }
+    .info-image-type{
+        margin-top: -15px;
+    }
+    .order-history,
+    .disputes-history {
+        .avatar {
+            width: 48px;
+            height: 48px;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+        .info-history {
+            @include d-flex();
+            @include align-items-center();
+            .name{
+                color: $primary_color;
+                font-weight: 500;
+                display: block;
+            }
+            .info{
+                margin-left: 10px;
+            }
+        }
+        .history-item {
+            padding-bottom: 24px;
+            margin-bottom: 24px;
+            border-bottom: 1px solid $border-color;
+            .content {
+                padding-top: 15px;
+            }
+        }
+        .download {
+            @include d-flex();
+            @include align-items-center();
+            padding-top: 15px;
+            .title {
+                padding-left: 5px;
+                padding-right: 5px;
+            }
+        }
+    }
+    .canceled-inner {
+        background-color: rgba(237, 0, 6, 0.05);
+        padding: 20px;
+        border-radius: 16px;
+        margin-bottom: 20px;
+        h4 {
+            font-size: 16px;
+            display: flex;
+            align-items: center;
+            svg {
+                margin-right: 8px;
+            }
+        }
+        p{
+            margin-bottom: 0;
+        }
+        .felan-button {
+            margin-top: 8px;
+        }
+    }
+}
+
+.felan-disputes .project-header{
+    @include d-flex();
+    @include align-items-center();
+}
+
+.title-project-dashboard{
+    img{
+        position: relative;
+        top: -3px;
+    }
+}
+
+.project-header .title-my-project{
+    img{
+        max-width: 20px !important;
+        height: 22px !important;
+        position: relative;
+        top: -3px;
+    }
+}
+
+#freelancer-project-proposal .action-order{
+    .felan-button{
+        font-size: 14px;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+}
+
+.felan-rotate-up {
+    @include transform(rotate(180deg));
+    @include transition(transform 0.3s ease);
+}
+
+.project-info .budget-show {
+    color: #3ab446;
+    margin-bottom: 0;
+}
+
+.form-thank-project{
+    h4{
+        font-size: 24px;
+        text-align: center;
+    }
+    p{
+        text-align: center;
+        margin-bottom: 10px;
+    }
+}
+
+.felan-service-order-detail .order-history .info-history > a{
+    margin-right: 10px;
+}
+
+.felan-service-order-detail .order-sidebar .info h5{
+    font-size: 16px;
+}
+
+body.single-service .main-content {
+    padding-top: 30px;
+}
+
+@media (min-width: 768px) {
+    .felan-project-order-detail{
+        .col-md-8 {
+            flex: 0 0 64%;
+            max-width: 64%;
+        }
+        .col-md-4 {
+            flex: 0 0 36%;
+            max-width: 36%;
+        }
+    }
+    .new-company-form{
+        @include d-flex();
+        .company-fields-avatar,
+        .info-company{
+            max-width: 50%;
+            @include flex(0 0 50%);
+        }
+        .company-fields-avatar{
+            padding-right: 8px;
+        }
+        .info-company{
+            padding-left: 8px;
+        }
+    }
+}
+
+.felan-project-item .project-proposal .felan-button{
+    padding: 10px;
+}
+
+#jobs_minimum_price-error.error,
+#jobs_maximum_price-error.error{
+    font-size: 12px;
+    color: #ea4335 !important;
+    margin-bottom: 0 !important;
+    margin-top: 5px !important;
+    display: block;
+    font-weight: 400;
+}
+
+.felan-project-item .price-inner span:not(.prefix){
+    font-size: 16px;
+}
+
+.archive-layout.archive-jobs{
+    .inner-filter {
+        width: 330px;
+    }
+    .apply-popup{
+        max-width: 450px !important;
+    }
+}
+
+.felan-project-item{
+    .project-wishlist{
+        position: absolute;
+        top: 24px;
+        right: 24px;
+    }
+    .project-title.logo-empty{
+        margin-top: 0;
+    }
+}
+
+.reviews-list .entry-avatar img {
+    min-width: 54px;
+    width: 100%;
+}
+
+.form-popup-apply{
+    sup {
+        color: red;
+        font-size: 12px;
+        top: -0.2em;
+    }
+}
+
+.alert.alert-error{
+    display: none;
+}
+
+.felan-wallet-topup{
+    .entry-title{
+        margin-top: 34px;
+        margin-bottom: 24px;
+        font-size: 24px;
+    }
+    #felan_payment_package{
+        margin-top: 15px;
+    }
+    label{
+        font-weight: 500;
+    }
+    sup{
+        color: red;
+    }
+    .price-inner{
+        margin-bottom: 24px;
+    }
+    .payout-item{
+        border-radius: 0 !important;
+        .title{
+            padding: 15px;
+            &:after{
+                left: 20px;
+            }
+        }
+    }
+    #felan_payment_wallet{
+        margin-top: 20px;
+        &:hover{
+            background-color: $accent_color;
+            color: #fff;
+        }
+        .felan-loading-effect{
+            position: static;
+            &:before{
+                background-color: transparent;
+            }
+        }
+        .felan-dual-ring{
+            position: static;
+            transform: none;
+            width: auto;
+            height: auto;
+            margin-left: 5px;
+            &:after {
+                width: 18px;
+                height: 18px;
+                border: 2px solid #fff;
+                border-color: #fff transparent #fff transparent;
+            }
+        }
+    }
+}
+
+.elementor-widget-felan-service-category{
+    .list-cate-item{
+        position: relative;
+    }
+    .felan-link-item{
+        z-index: 2;
+    }
+}
+
+.felan-thankyou{
+    text-align: center;
+    padding: 30px;
+    h2{
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
+    .content{
+        max-width: 550px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .felan-button{
+        margin-top: 24px;
+    }
+}
+
+.ricetheme-messages{
+    .mess-content__body{
+        .card-mess{
+            .thumbnail{
+                margin-top: 3px;
+                text-align: right;
+                position: relative;
+                img{
+                    border-radius: 4px;
+                    max-width: 200px;
+                }
+                .download{
+                    position: absolute;
+                    top: 10px;
+                    right: 10px;
+                    background: $accent_color;
+                    border-radius: 50%;
+                    font-size: 12px;
+                    width: 25px;
+                    height: 25px;
+                    line-height: 25px;
+                    text-align: center;
+                }
+            }
+            .file{
+                text-align: right;
+                .download{
+                    padding: 5px 10px;
+                    background-color: $accent_color;
+                    border-radius: 4px;
+                    color: #fff;
+                    display: inline-block;
+                    margin-top: 3px;
+                }
+            }
+        }
+    }
+    .mess-content .mess-action {
+        @include d-flex();
+        @include align-items-center();
+        position: absolute;
+        top: 40px;
+        right: 32px;
+    }
+    .file-upload{
+        color: #111;
+        background-color: #f2f4f7;
+        width: 42px;
+        height: 42px;
+        text-align: center;
+        border-radius: 50%;
+        margin-right: 10px;
+        i{
+            position: relative;
+            top: 6px;
+        }
+    }
+    .custom-image-add{
+        button{
+            color: #111 !important;
+            background-color: #f2f4f7 !important;
+            padding: 0 !important;
+            width: 42px;
+            height: 42px;
+            margin-right: 10px;
+        }
+    }
+    #felan_mess_file_view{
+        margin-top: 10px;
+        button{
+            display: inline-block;
+            position: relative;
+            left: 30px;
+            top: 18px;
+            background-color: $accent_color;
+            padding: 5px 12px;
+            border-radius: 5px;
+            color: #fff;
+        }
+        i{
+            margin-right: 8px;
+        }
+        .cv-icon-delete i{
+            color: #fff;
+            margin-right: 0;
+            margin-left: 8px;
+        }
+    }
+    #felan_drop_file{
+        margin-bottom: 0;
+        margin-right: 10px;
+        button{
+            width: 42px;
+            height: 42px;
+            padding: 0;
+            color: #111;
+            background-color: #f2f4f7;
+        }
+    }
+}
+
+.messages-popup{
+    #felan_drop_file button,
+    .custom-image-add button{
+        border-radius: 50%;
+        background-color: #f2f4f7;
+        border: 0;
+        cursor: pointer;
+    }
+    .custom-image-view{
+        figure{
+            position: relative;
+            text-align: right;
+            img{
+                width: 100%;
+                height: 200px;
+                object-fit: cover;
+            }
+            .media-item-actions{
+                position: absolute;
+                right: 0;
+                top: 0;
+                z-index: 9;
+                i{
+                    color: #fff;
+                }
+            }
+        }
+    }
+    #felan_mess_file_view {
+        text-align: right;
+        button{
+            position: static;
+            margin-bottom: 10px;
+            border: 0;
+        }
+    }
+}
+
+.mess-content__action{
+    .media-thumb{
+        position: relative;
+        bottom: -20px;
+        left: 30px;
+        img {
+            height: 100px;
+            width: 100px;
+        }
+    }
+    .media-item-actions {
+        position: absolute;
+        top: 0;
+        left: 80px;
+        a{
+            color: #fff;
+        }
+    }
+}
+
+@media (max-width: 767px) {
+    body.single-freelancer .tab-single .tab-single-list {
+        overflow-x: auto;
+    }
+    body.single-freelancer .tab-single .tab-single-item {
+        padding-left: 15px;
+        padding-right: 15px;
+        white-space: nowrap;
+    }
+    body.single-freelancer .tab-single .tab-single-list:before {
+        width: 250vh;
+    }
+    body.single-freelancer .tab-single .tab-single-item:before {
+        left: 0;
+    }
+    body.single ul.felan_breadcrumb {
+        display: none;
+    }
+    body.single .page-breadcrumb {
+        margin-top: 25px;
+    }
+    body.single-freelancer .tab-single .tab-single-list {
+        position: static;
+    }
+    .felan-service-order .service-header,
+    .felan-disputes .service-header {
+        min-width: 350px;
+    }
+}

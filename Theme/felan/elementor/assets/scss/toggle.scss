@@ -1,0 +1,90 @@
+@import "settings/variables";
+@import "settings/mixins";
+
+.felan-pricing-plan {
+	.felan-pricing-plan-header {
+		margin-bottom: 60px;
+	}
+	.toggle-wrap {
+		@include d-flex();
+		@include align-items-center();
+		@include justify-content-center();
+
+		.switch-label {
+			padding: 14px 4px;
+			border: 1px solid $border_color;
+			background-color: #fff;
+			border-radius: 50px;
+			font-size: 16px;
+			font-weight: 400;
+		}
+
+		.switch {
+			padding: 12px 26px;
+			cursor: pointer;
+			color: $primary_color;
+			+ .switch {
+				margin-left: 10px;
+			}
+		}
+
+		.switch.active {
+			background-color: $accent_color;
+			color: #fff;
+			border-radius: 30px;
+		}
+
+		.discount {
+			position: relative;
+
+			.discount-text {
+				position: absolute;
+				top: -40px;
+				min-width: 80px;
+				background-color: #3ab446;
+				color: aliceblue;
+				font-size: 12px;
+				text-align: center;
+				padding: 2px 5px;
+				border-radius: 30px;
+				right: -45px;
+			}
+			.discount-bg {
+				width: 28px;
+				background-image: url(../images/macaroni.png);
+				display: block;
+				height: 34px;
+				position: relative;
+				bottom: 15px;
+				left: 5px;
+			}
+		}
+	}
+
+	.felan-pricing-plan-main {
+		.primary-content {
+			max-width: 770px;
+			margin: 0 auto;
+			text-align: center;
+		}
+
+		.pricing-plan-item {
+			display: none;
+		}
+
+		.pricing-plan-item.active {
+			display: block;
+		}
+	}
+}
+
+@media (max-width: 567px) {
+	.felan-pricing-plan {
+		.felan-pricing-plan-header {
+			margin-bottom: 40px;
+		}
+		.toggle-wrap .switch{
+			font-size: 14px;
+		}
+	}
+}

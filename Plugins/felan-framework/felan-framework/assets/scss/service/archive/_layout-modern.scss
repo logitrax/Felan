@@ -1,0 +1,63 @@
+.felan-service-item.layout-modern {
+  overflow: hidden;
+  .service-thumbnail {
+    border-radius: 0;
+    img {
+      object-fit: cover;
+      width: 100%;
+    }
+  }
+  .service-content {
+    padding: 20px;
+  }
+  .service-status-inner {
+    @include d-flex();
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    .service-status {
+      margin-top: 0;
+      width: auto;
+      margin-right: 12px;
+    }
+    .featured,
+    .btn-add-to-wishlist {
+      width: 36px;
+      height: 36px;
+      background-color: #ffff;
+      border-radius: 50%;
+      text-align: center;
+      display: block;
+    }
+    .featured {
+      img {
+        position: relative;
+        top: 6px;
+        margin: 0 auto;
+      }
+    }
+    .btn-add-to-wishlist {
+      span {
+        position: relative;
+        top: 8px;
+      }
+    }
+  }
+  .services-center {
+    border-bottom: 0;
+    margin-top: 0;
+    margin-bottom: 12px;
+    padding-bottom: 0;
+  }
+  .image-freelancers {
+    width: 24px;
+    height: 24px;
+  }
+  .price-inner,
+  .service-title {
+    margin-top: 0;
+  }
+  .service-header {
+    margin-bottom: 12px;
+  }
+}

@@ -1,0 +1,52 @@
+@import "settings/mixins";
+@import "settings/variables";
+
+.felan-image-vertical-animation {
+    --felan-image-vertical-spacing: 10px;
+    --felan-image-vertical-item: 4;
+    overflow: hidden;
+    position: relative;
+    height: 680px;
+    &.btt .felan-image-item-container{
+        animation: translateinfinitetop 30s linear infinite;
+    }
+    &.ttb .felan-image-item-container{
+        animation: translateinfinitebottom 30s linear infinite;
+    }
+}
+
+.felan-image-item-container {
+    @include d-flex();
+    @include flex-column();
+}
+
+.felan-image-item {
+    max-width: 310px;
+    margin-top: var(--felan-image-vertical-spacing);
+    margin-bottom: var(--felan-image-vertical-spacing);
+}
+
+.felan-image-item-container::after {
+    content: '';
+    display: block;
+    height: 100%;
+}
+
+@keyframes translateinfinitetop {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-50%);
+    }
+}
+
+@keyframes translateinfinitebottom {
+    0% {
+        transform: translateY(-50%);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+

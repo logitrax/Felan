@@ -1,0 +1,61 @@
+.pakages-dashboard {
+  .limit,
+  .days,
+  .remaining {
+    font-weight: 500;
+    text-transform: capitalize;
+  }
+  .package-id {
+    color: $accent_color;
+  }
+}
+
+#form-freelancer-user-package,
+#form-employer-user-package {
+  .inner-popup {
+    padding: 0;
+    max-width: 370px;
+  }
+  h5 {
+    padding: 24px;
+  }
+  .btn-close {
+    top: 30px;
+    right: 24px;
+  }
+  i.fa-check {
+    color: #3ab446;
+  }
+}
+
+.felan-overview-package {
+  padding-left: 0;
+  list-style: none;
+  margin-bottom: 0;
+  li {
+    @include d-flex();
+    @include justify-content-between();
+    padding: 12px 24px;
+    font-weight: 500;
+    &:nth-child(odd) {
+      background-color: rgba(0, 116, 86, 0.05);
+    }
+  }
+  .content {
+    color: $primary_color;
+  }
+}
+
+@media (min-width: 1200px) {
+  .pakages-dashboard {
+    .col-name {
+      min-width: 300px;
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .pakages-dashboard tbody td:first-child {
+    min-width: 120px !important;
+  }
+}

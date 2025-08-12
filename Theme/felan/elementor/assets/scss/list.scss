@@ -1,0 +1,157 @@
+@import "settings/variables";
+@import "settings/mixins";
+
+.felan-list {
+  font-size: 0;
+  max-width: 100%;
+
+  &.toggle {
+    .heading {
+      font-size: 16px;
+      margin-bottom: 0;
+      i {
+        display: none;
+      }
+    }
+    .list-inner {
+      margin-top: 30px;
+    }
+  }
+
+  .item {
+    font-size: 0;
+  }
+
+  .list-header {
+    display: flex;
+    align-items: center;
+    &.top {
+      align-items: flex-start;
+      i {
+        margin-top: 5px;
+      }
+    }
+    &.middle {
+      align-items: center;
+    }
+    &.bottom {
+      align-items: flex-end;
+      i {
+        margin-bottom: 5px;
+      }
+    }
+  }
+
+  .link {
+    display: inline-block !important;
+    padding: 0;
+    // Use transition of children.
+    transition: none;
+  }
+
+  .icon {
+    @extend %NormalTransition;
+    flex-shrink: 0;
+    font-size: 14px;
+    margin-right: 10px;
+    line-height: 1;
+  }
+
+  .text {
+    @extend %NormalTransition;
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 0;
+    b {
+      font-weight: 500;
+    }
+  }
+  .badge {
+    font-size: 12px;
+    padding: 2px 6px 3px;
+    color: #fff;
+    background-color: #ef2107;
+    margin-left: 3px;
+    border-radius: 3px;
+    position: relative;
+    bottom: 2px;
+  }
+  .description {
+    font-size: 14px;
+    line-height: 1.5;
+    margin-top: 3px;
+    color: $text_color;
+    white-space: normal;
+  }
+}
+
+.felan-list-layout-block {
+  .item + .item {
+    margin-top: 20px;
+  }
+}
+
+.felan-list-layout-inline {
+  .felan-list {
+    margin-left: -15px;
+    margin-right: -15px;
+
+    .item {
+      display: inline-block;
+      padding: 0 15px;
+      margin-bottom: 12px;
+    }
+  }
+}
+
+.felan-list-layout-columns {
+  .felan-list {
+    position: relative;
+    min-height: 1px;
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -15px;
+    margin-right: -15px;
+  }
+
+  .item {
+    padding: 0 15px;
+    flex-grow: 1;
+    flex: 1 1 50%;
+
+    &:nth-child(2) {
+      ~ .item {
+        margin-top: 11px;
+      }
+    }
+  }
+}
+
+.felan-list-style-icon-border {
+  .felan-icon {
+    border: 2px solid currentColor;
+    border-radius: 50%;
+    padding: 0.313em;
+  }
+}
+
+@media (max-width: 576px) {
+  .felan-list.toggle {
+    padding-top: 18px;
+    padding-bottom: 18px;
+    border-top: 1px solid $border-color;
+    .heading {
+      cursor: pointer;
+      @include d-flex();
+      @include align-items-center();
+      @include justify-content-between();
+      i {
+        display: block;
+        font-size: 14px;
+      }
+    }
+    .list-inner {
+      display: none;
+    }
+  }
+}

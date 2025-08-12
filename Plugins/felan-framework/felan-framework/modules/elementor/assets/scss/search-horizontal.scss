@@ -1,0 +1,200 @@
+.felan-search-horizontal {
+  .search-horizontal-inner {
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    border-radius: 16px;
+    background-color: #fff;
+    box-shadow: 4px 4px 20px 0 rgba(0, 0, 0, 0.05);
+    width: 100%;
+    max-width: 570px;
+    justify-content: space-between;
+  }
+  .form-group {
+    border-width: 1px 0 1px 1px;
+    border-style: solid;
+    border-color: #eee;
+    &:first-child {
+      border-width: 1px 0 1px 1px;
+      border-style: solid;
+      border-color: #eee;
+      border-radius: 16px 0 0 16px;
+      flex: 1;
+      input {
+        border-radius: 50px 0 0 50px;
+      }
+    }
+    i,
+    svg {
+      position: absolute;
+      top: 50%;
+      left: 18px;
+      -webkit-transform: translateY(-50%);
+      -moz-transform: translateY(-50%);
+      -o-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+      transform: translateY(-50%);
+      color: var(--felan-color-secondary);
+      font-size: 20px;
+      font-weight: 400;
+      z-index: 999;
+      ~ {
+        .select2.select2-container {
+          padding-left: 55px;
+        }
+      }
+    }
+    &:last-child {
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-align: center;
+      align-items: center;
+      border-width: 0 0 0 1px;
+      border-style: solid;
+      border-color: #eee;
+    }
+    input {
+      height: 68px;
+      border: 0;
+      padding-left: 48px;
+    }
+  }
+  .radius input {
+    height: 47px;
+    padding-left: 5px;
+  }
+  .felan-form-location {
+    border-left: 1px solid var(--felan-color-border);
+  }
+  .felan-select2 {
+    height: 70px !important;
+    padding-left: 55px;
+    max-width: 220px !important;
+  }
+  .select2.select2-container {
+    width: 100% !important;
+    height: 100%;
+    padding: 0 24px;
+  }
+  .btn-search-horizontal {
+    height: 70px;
+    border-radius: 0 16px 16px 0;
+    width: 100%;
+  }
+  .popular-categories {
+    margin-top: 15px;
+    display: inline-block;
+  }
+  .felan-clear-top-filter {
+    color: var(--felan-color-secondary);
+    padding-right: 0;
+    padding-left: 14px;
+    cursor: pointer;
+    height: 70px;
+    line-height: 70px;
+    &:hover {
+      color: var(--felan-color-accent);
+    }
+  }
+  .list-category {
+    margin-bottom: 0;
+    list-style: none;
+    padding-left: 0;
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    a {
+      font-weight: 400;
+      color: var(--felan-color-primary);
+      &:hover {
+        color: var(--felan-color-accent);
+      }
+    }
+    li {
+      &:not(:last-child) {
+        a {
+          &:after {
+            content: ",";
+            padding-right: 6px;
+          }
+        }
+      }
+    }
+  }
+}
+.select2-container .select2-selection--single span.select2-selection__rendered {
+  display: flex;
+}
+.select2-container--default
+  .select2-selection--single
+  span.select2-selection__arrow {
+  position: static;
+  height: auto;
+}
+// .felan-search-horizontal-layout-01 {
+//   .form-group {
+//     &:first-child {
+//       input {
+//         min-width: 270px;
+//       }
+//     }
+//   }
+// }
+
+.ui-helper-hidden-accessible {
+  display: none;
+}
+
+@media (max-width: 567px) {
+  .felan-search-horizontal {
+    input {
+      padding-left: 56px;
+    }
+    .search-horizontal-inner {
+      display: block;
+      border-radius: 16px;
+      border: 1px solid #eee;
+    }
+    .form-group {
+      border-width: 0 0 1px 0;
+      &:first-child {
+        border-width: 0 0 1px 0;
+      }
+      &:last-child {
+        border: 0;
+      }
+      i,
+      svg {
+        left: 26px;
+      }
+    }
+    .btn-search-horizontal {
+      width: 100%;
+      margin-top: 24px;
+      margin-bottom: 24px;
+      border-radius: 8px;
+      height: 50px;
+    }
+    .select2.select2-container {
+      height: 70px;
+      line-height: 70px;
+    }
+  }
+  .felan-search-horizontal-layout-01 {
+    .form-group {
+      &:first-child {
+        input {
+          max-width: 100%;
+          border-radius: 16px 16px 0 0;
+          padding-left: 58px;
+        }
+      }
+      &:last-child {
+        padding-left: 24px;
+        padding-right: 24px;
+      }
+    }
+  }
+}

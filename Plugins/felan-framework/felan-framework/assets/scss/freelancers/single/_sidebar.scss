@@ -1,0 +1,181 @@
+.block-archive-sidebar {
+  padding: 20px;
+  border: 1px solid $border_color;
+  border-radius: 16px;
+  + .block-archive-sidebar {
+    margin-top: 16px;
+  }
+  h4 {
+    font-size: 18px;
+  }
+}
+
+.freelancer-sidebar {
+  position: relative;
+  .info-top {
+    text-align: center;
+  }
+  .image-freelancers {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 1px solid $border-color;
+    line-height: 120px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .title-wapper h2 {
+    font-size: 18px;
+    margin-bottom: 0;
+    margin-top: 18px;
+    display: inline-block;
+  }
+  .freelancer-current-position {
+    margin-top: 7px;
+  }
+  .felan-rating-warpper {
+    margin-top: 12px;
+    .rating-count {
+      padding-left: 0;
+    }
+  }
+  .salary {
+    margin-top: 24px;
+  }
+  .freelancer-salary {
+    font-weight: 500;
+    color: $primary_color;
+    background-color: #f2f4f7;
+    border-radius: 30px;
+    padding: 8px 20px;
+    display: inline-block;
+  }
+  .info-center {
+    margin-top: 22px;
+    .info {
+      @include d-flex();
+      @include align-items-center();
+      gap: 8px;
+      i {
+        margin-right: 8px;
+        width: 18px;
+        font-size: 18px;
+        font-weight: 400;
+        color: $accent_color;
+        &.fa-eye {
+          margin-right: 0;
+          margin-left: 18px;
+        }
+      }
+      + .info {
+        margin-top: 10px;
+      }
+    }
+    .details-info {
+      margin-bottom: 0;
+    }
+  }
+  .info-bottom-btn {
+    margin-top: 12px;
+    gap: 10px;
+    > .felan-add-to-follow-freelancer {
+      flex: 0 0 47%;
+      text-align: center;
+    }
+    .felan-button i,
+    .felan-add-to-follow-freelancer i {
+      margin-right: 5px;
+    }
+  }
+  .add-follow-freelancer {
+    position: absolute !important;
+    top: 15px;
+    right: 15px;
+    .icon-plus {
+      font-size: 20px;
+    }
+    .text-icon {
+      display: none;
+    }
+  }
+  .felan-button {
+    margin-top: 10px;
+  }
+  .info-bottom {
+    .logged-out,
+    .felan-button {
+      width: 100%;
+      padding-left: 0;
+      padding-right: 0;
+      text-align: center;
+    }
+    .felan-invite {
+      color: $primary_color;
+      border-color: #9ba2b0;
+    }
+  }
+  .freelancer-skills,
+  .freelancer-insights {
+    margin-top: 25px;
+    h3 {
+      font-size: 18px;
+      margin-bottom: 12px;
+    }
+  }
+  .list-social {
+    margin-bottom: 0;
+    list-style: none;
+    padding-left: 0;
+    @include d-flex();
+    @include justify-content-center();
+    margin-top: 20px;
+    li {
+      + li {
+        margin-left: 20px;
+      }
+    }
+    a {
+      font-weight: 500;
+      color: $primary_color;
+      font-size: 20px;
+    }
+  }
+  .button-warpper {
+    @include d-flex();
+    @include align-items-center();
+    .view-profile {
+      margin-right: 10px;
+    }
+    .felan-button {
+      padding-left: 20px;
+      padding-right: 20px;
+      flex: 0 0 48%;
+    }
+    .felan-button:not(.view-profile) {
+      color: $accent_color;
+      background-color: transparent;
+      &:hover {
+        color: #fff;
+        background-color: $accent_color;
+      }
+    }
+  }
+}
+
+.coo-list-insights {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 0;
+  li {
+    @include d-flex();
+    @include justify-content-between();
+    + li {
+      margin-top: 7px;
+    }
+  }
+  .value {
+    font-weight: 500;
+    color: $primary_color;
+  }
+}
